@@ -11,7 +11,11 @@ import { OnInit } from '@angular/core';
 
 export class KindComponent implements OnInit{
     public kinds: IKind[] =[];
+    public pageNumber: number = 5;
     constructor(private kindService: KindService) { }
+    al(){
+      console.log(this.pageNumber);
+    }
     ngOnInit(){
       this.kindService.ReturnAllKinds().subscribe(res => {
         this.kinds = res;
