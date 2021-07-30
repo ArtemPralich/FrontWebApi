@@ -27,13 +27,9 @@ import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterModule } from './pages/register/register.module';
 import { LoginService } from './service/LoginService';
-//import { RegisterComponent } from './pages/register/register.component';
-//import { NzTabsModule } from 'ng-zorro-antd/tabs';
-//registerLocaleData(en);
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzTabsModule } from 'ng-zorro-antd/tabs';
-//import { MatTabsModule } from '@angular/material/tabs'
-//import { NzFormModule } from 'ng-zorro-antd/form';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -48,13 +44,11 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     LoginComponent
   ],
   imports: [
-    //NzFormModule,
-    NzButtonModule,
-    NzTabsModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    NgbModule,
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
