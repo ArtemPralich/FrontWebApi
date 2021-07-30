@@ -1,0 +1,9 @@
+<ul *ngFor="let kind of kinds">
+    <li>
+        <p>
+            <a href="/kinds/{{kind.kindId}}/products">{{kind.name}}</a><br/>
+            {{kind.about}}<br/>
+            {{kind.kindId}}
+        </p>
+    </li>
+</ul>

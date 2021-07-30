@@ -1,0 +1,21 @@
+<div class="menuHub">
+    <div class="menuItem">
+        <a href="">Home</a><br/>
+    </div>
+    <div class="menuItem">
+        <a href="/kinds">Kind</a><br/>
+    </div>
+    <div class="menuItem">
+        <a href="/shippers">Shipper</a><br/>
+    </div>
+    <div class="menuItem">
+        <a href="/about">About</a><br/>
+    </div>
+    <div class="menuItem">
+        <a *ngIf="this.isLoggedIn()" href="/login">Login</a><br/>
+    </div>
+    <div class="menuItem">
+        <a *ngIf="!this.isLoggedIn()" href="/logout" (click)="this.loginService.logout();" >Logout</a><br/>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+<form >
+    <p>
+        <label>
+            First name
+        </label>
+        <input id="firstName" name="firstName" [(ngModel)]="this.user.FirstName">
+    </p>
+    <p>
+        <label>
+            Last name
+        </label>
+        <input id="lastName" name="lastName" [(ngModel)]="this.user.LastName">
+    </p>
+    <p>
+        <label>
+            Username
+        </label>
+        <input id="userName" name="userName" [(ngModel)]="this.user.UserName">
+    </p>
+    <p>
+        <label>
+            Email
+        </label>
+        <input id="email" name="email" [(ngModel)]="this.user.Email">
+    </p>
+    <p>
+        <label>
+            PhoneNumber
+        </label>
+        <input id="phoneNumber" name="phoneNumber" [(ngModel)]="this.user.PhoneNumber">
+    </p>
+    <p>
+        <label>
+            Password
+        </label>
+        <input id="password" type="password" name="password" [(ngModel)]="this.user.Password">
+    </p>
+    <input type="submit" id="submitLogin" value="Register" (click)="register()">
+</form>

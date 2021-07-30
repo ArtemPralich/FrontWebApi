@@ -1,0 +1,12 @@
+.menuItem{
+    float: left;
+    margin-left: 10%;
+    
+}
+.menuHub{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(165, 65, 65);
+    line-height: 60px;
+}

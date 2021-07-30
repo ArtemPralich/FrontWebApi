@@ -1,0 +1,42 @@
+<p>
+    <label>Поиск</label>
+    <input id="search" type="text" size="10" (input)="search()">
+</p>
+<p>
+    <label>Минимальная цена</label>
+    <input id="minPrice" type="text" size="10" (input)="changePrice()">
+</p>
+<p>
+    <label>Максимальная цена</label>
+    <input id="maxPrice" type="text" size="10" (input)="changePrice()">
+</p>
+
+
+<form method="post">
+    <label>Валюта</label><br/>
+    <select id="selectCurrency"   (change)="currency();" >
+        <option value="rub">Российские рубли</option>
+        <option value="byn">Белорусские рубли</option>
+        <option value="eur">Евро</option>
+        <option value="usd">Доллары</option>
+    </select>
+</form>
+
+<form method="post">
+    <label>Сортировать по</label><br/>
+    <select multiple size="2" id="sort" (change)="sort();" >
+        <option value="name">Имя продукта</option>
+        <option value="price">Цена</option>
+    </select>
+</form>
+<br/>
+<br/>
+<ul *ngFor="let product of products">
+    <li>
+        <p>
+            {{product.name}}<br/>
+            {{product.productId}}<br/>
+            {{product.price}}
+        </p>
+    </li>
+</ul>
