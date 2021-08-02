@@ -19,12 +19,9 @@ export class ProductComponent implements OnInit{
         orderBy:"",
         maxPrice: "5000000000000",
         searchTerm: "",
-        
-
     };
     public products: IProduct[] =[];
     public kindId: number = 0;
-    public resultString: string = "";
     constructor(private productsService: ProductService, private route: ActivatedRoute) {
     }
     search(){
@@ -53,7 +50,7 @@ export class ProductComponent implements OnInit{
                 this.kindId = params['id'];
             }
         );
-        this.productsService.ReturnAllProduct(this.kindId, this.Params).subscribe(res => {
+        this.productsService.ReturnAllProducts(this.kindId, this.Params).subscribe(res => {
             this.products = res;
         });
     }

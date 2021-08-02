@@ -27,6 +27,7 @@ const routes: Routes = [
       { path: 'kinds', component: AdminKindComponent,},
       { path: 'shippers', component: AdminShipperComponent,},
       { path: 'products', component: AdminProductComponent,},
+      { path: 'kinds/:id/products', component: AdminProductComponent,},
     ]
 },
   { path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet

@@ -14,7 +14,7 @@ export class AdminKindComponent implements OnInit {
   public kinds: IKind[] = [];
 
   public kind : IKind = {
-    kindId : 19,
+    kindId : 0,
     name : "",
     about : ""
   };

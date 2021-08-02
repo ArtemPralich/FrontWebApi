@@ -9,7 +9,7 @@ export class ProductService {
 
     constructor(private http:HttpClient){}
 
-    public ReturnAllProduct(id:number, params:any):Observable<IProduct[]> {
+    public ReturnAllProducts(id:number, params:any):Observable<IProduct[]> {
         return this.http.get<IProduct[]>(`${this.pathBase}`+ `${id}` + "/products", {params});
       }
 }
