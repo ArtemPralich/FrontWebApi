@@ -29,6 +29,9 @@ import { RegisterModule } from './pages/register/register.module';
 import { LoginService } from './service/LoginService';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
+
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ShipperComponent,
     ProductComponent,
     //RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    AdminKindComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AppRoutingModule,
     NgbModule,
+    
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
