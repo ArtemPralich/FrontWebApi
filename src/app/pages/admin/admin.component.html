@@ -1,0 +1,62 @@
+<div style="float:left; width: 10%; background-color: rgb(201, 201, 201);height: 1000px;">
+    <div class="navs-items">
+        <ul class="navbar-nav">
+            <li class="">
+                Admin panel
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="admin/kinds" >Kinds</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="admin/shippers" >Shippers</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="admin/products">Products</a>
+        </ul>
+    </div>
+</div>
+<div style= "float:left; width: 85%; margin: 0 30px;">
+    <router-outlet></router-outlet>
+    <!-- <table class="table table-hover">
+        <caption>Kinds</caption>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>About</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let kind of kinds">
+                <td>
+                    {{kind.kindId}}
+                </td>
+                <td>
+                    {{kind.name}}
+                </td>
+                <td>
+                    {{kind.about}}
+                </td>
+                <td>
+                    del
+                </td>
+                <td>
+                    Edit
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>
+
+
+<!-- <ul *ngFor="let kind of kinds">
+    <li>
+        <p>
+            <a href="/kinds/{{kind.kindId}}/products">{{kind.name}}</a><br/>
+            {{kind.about}}<br/>
+            {{kind.kindId}}
+        </p>
+    </li>
+</ul> -->

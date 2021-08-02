@@ -13,7 +13,7 @@ export class ShipperComponent implements OnInit{
     public shippers: IShipper[] =[];
     constructor(private shipperService: ShipperService) { }
     ngOnInit(){
-      this.shipperService.ReturnAllKinds().subscribe(res => {
+      this.shipperService.ReturnAllShippers().subscribe(res => {
         this.shippers = res;
       });
     }

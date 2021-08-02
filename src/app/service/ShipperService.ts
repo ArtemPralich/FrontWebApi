@@ -9,7 +9,7 @@ export class ShipperService {
 
     constructor(private http:HttpClient){}
 
-    public ReturnAllKinds():Observable<IShipper[]> {
+    public ReturnAllShippers():Observable<IShipper[]> {
         return this.http.get<IShipper[]>(`${this.pathBase}`);
       }
 }

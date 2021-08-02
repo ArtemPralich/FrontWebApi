@@ -10,7 +10,7 @@ import { IUserRegister } from 'src/app/interface/IUserRegister';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  public resultStatus : number = 0;
   public user: IUserRegister = {
     FirstName : '',
     LastName:  "",
@@ -24,12 +24,15 @@ export class RegisterComponent implements OnInit {
   register(){
     var json = JSON.stringify(this.user);
     
-    this.http.post<string>(`https://localhost:5001/Authentication`, this.user).subscribe(res => {
-      const token = (<any>res).token; 
+    this.http.post<string>(`https://localhost:5001/Authentication`, this.user , { observe: 'response' } ).subscribe(response => {
+      this.resultStatus = response.status;
+      const token = (<any>response).token; 
       localStorage.setItem("jwt", token);
-      this.router.navigate(["/"]);
-  } );
+      //this.router.navigate(["/"]);
+    });
+    
   }
+  
   ngOnInit(): void {
 
   }

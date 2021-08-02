@@ -1,27 +1,26 @@
 <div class="menuHub">
-    <div class="logo">
-        <h4>LOGO</h4>
+    <div (click) = 'this.router.navigate(["/"]);'>
+        <h4 class="logo">LOGO</h4>
     </div>
     <div class="menuItem">
-        <a href="">Home</a><br/>
+        <a class=" textItems" href="">Home</a><br/>
     </div>
     <div class="menuItem">
-        <a href="/kinds">Kind</a><br/>
+        <a class="textItems" href="/kinds">Kind</a><br/>
     </div>
     <div class="menuItem">
-        <a href="/shippers">Shipper</a><br/>
+        <a class="textItems" href="/shippers">Shipper</a><br/>
     </div>
     <div class="menuItem">
-        <a href="/about">About</a><br/>
+        <a class="textItems" href="/about">About</a><br/>
     </div>
     <div class="menuItem">
-        <a *ngIf="this.isLoggedIn() else logout" href="/login">Login</a><br/>
+        <a class="textItems" *ngIf="this.isLoggedIn() else logout" href="/login">Login</a><br/>
     </div>
     <ng-template #logout>
         <div class="menuItem">
             <a *ngIf="!this.isLoggedIn()" href="/logout" (click)="this.loginService.logout();" >Logout</a><br/>
         </div>
-    </ng-template>
-    
+    </ng-template>    
 </div>
 

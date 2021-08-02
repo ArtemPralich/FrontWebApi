@@ -1,17 +1,20 @@
 .logo{
-    margin: 15px 0 auto 30px ;
+    margin: 25px 0 auto 30px ;
     float: left;
     color : white;
 }
 .menuItem{
     float: left;
     margin-left: 5%;
-    
 }
 .menuHub{
     width: 100%;
-    height: 60px;
+    height: 80px;
     background-color: rgb(59, 48, 48);
     color: rgb(165, 65, 65);
-    line-height: 60px;
+    line-height: 80px;
+    
+}
+.textItem{
+    font-size: 110%;
 }

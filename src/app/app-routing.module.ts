@@ -9,6 +9,8 @@ import { ProductComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
+
 
 
 
@@ -16,7 +18,14 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   { path: 'kinds', component: KindComponent,},
-  { path: 'admin', component: AdminComponent,},
+  { path: 'admin', component: AdminComponent,
+    children: [
+      { path: 'kinds', component: AdminKindComponent,},
+    ]
+},
+  
+  { path: 'admin/shippers', component: AdminComponent,},
+  { path: 'admin/products', component: AdminComponent,},
   { path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
   { path: 'register', component: RegisterComponent},
