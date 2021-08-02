@@ -11,6 +11,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
 import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
+import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 
 
 
@@ -25,12 +26,9 @@ const routes: Routes = [
     children: [
       { path: 'kinds', component: AdminKindComponent,},
       { path: 'shippers', component: AdminShipperComponent,},
-      //{ path: 'products', component: AdminKindComponent,},
+      { path: 'products', component: AdminProductComponent,},
     ]
 },
-  
-  { path: 'admin/shippers', component: AdminComponent,},
-  { path: 'admin/products', component: AdminComponent,},
   { path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
   { path: 'register', component: RegisterComponent},

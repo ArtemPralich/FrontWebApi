@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
       this.resultStatus = response.status;
       const token = (<any>response).token; 
       localStorage.setItem("jwt", token);
-      //this.router.navigate(["/"]);
+      this.router.navigate(["/"]);
     });
     
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IKind } from 'src/app/interface/IKind';
 import { KindService } from 'src/app/service/KindService';
+import { IndexKind } from 'typescript';
 
 @Component({
   selector: 'app-admin-kind',
@@ -11,15 +13,30 @@ import { KindService } from 'src/app/service/KindService';
 export class AdminKindComponent implements OnInit {
   public kinds: IKind[] = [];
 
-  constructor(private kindService : KindService) { }
+  public kind : IKind = {
+    kindId : 19,
+    name : "",
+    about : ""
+  };
+  constructor(private kindService : KindService, private router : Router) { }
 
   ngOnInit(): void {
     this.kindService.ReturnAllKinds().subscribe(res => {
       this.kinds = res;
     });
   }
-
-  
+  create(){ 
     
-  
+    this.kind.name =(<HTMLInputElement>document.getElementById("kindName")).value;
+    this.kind.about =(<HTMLInputElement>document.getElementById("kindAbout")).value;
+    console.log(this.kind.name);
+    this.kindService.CreateKind(this.kind).subscribe((data)=>{console.log("created");});
+    
+    location.reload();
+  }
+  delete(id:number){
+    this.kindService.DeleteKind(id).subscribe((data)=>{
+      console.log("deleted");});
+    location.reload();
+  }
 }

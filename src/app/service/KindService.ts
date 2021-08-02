@@ -28,13 +28,15 @@ export class KindService {
     return this.http.get<IKind>(`${this.pathBase}`+ "/" + id, { headers: this.myHeaders });
   }
 
-  public CreateKind(kind : IKind):Observable<IKind[]> {
+  public CreateKind(kind : IKind):Observable<IKind> {
       
-    return this.http.post<IKind[]>(`${this.pathBase}`, kind, { headers: this.myHeaders });
+    return this.http.post<IKind>(`${this.pathBase}`, kind, { headers: this.myHeaders });
   }
 
-  public DeleteKind(){
+  public DeleteKind(id: number):Observable<any>{
 
+    return this.http.delete<any>(`${this.pathBase}/${id}`);
   }
+
 
 }

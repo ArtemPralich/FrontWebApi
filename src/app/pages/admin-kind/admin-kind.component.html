@@ -1,3 +1,17 @@
+<div style="margin: 15px 0px;">
+    <form>
+        <div  class="form-group">
+            <label >Kindname</label>
+            <input id="kindName" type="text" class="form-control">
+        </div>
+        <div  class="form-group">
+            <label >About kind</label>
+            <textarea id="kindAbout" type="textarea" class="form-control" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark" (click)="create()">Create</button>
+    </form>
+</div>
+
 <table class="table table-hover">
     <caption>Kinds</caption>
     <thead>
@@ -21,10 +35,10 @@
                 {{kind.about}}
             </td>
             <td>
-                del
+                <button type="button" class="btn btn-dark" (click)="this.delete(kind.kindId)">Delete</button>
             </td>
             <td>
-                Edit
+                <button type="button" class="btn btn-dark">Edit</button>
             </td>
         </tr>
     </tbody>
