@@ -9,8 +9,10 @@ import { ShipperService } from 'src/app/service/ShipperService';
 
 @Component({
   selector: 'app-admin',
+  //directives: [app-admin-kind],
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  
 })
 export class AdminComponent implements OnInit {
   public strAction: string ="";

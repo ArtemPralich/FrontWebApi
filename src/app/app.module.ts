@@ -31,6 +31,8 @@ import { LoginService } from './service/LoginService';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
+import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
+import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 
 
 
@@ -46,7 +48,9 @@ import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
     //RegisterComponent,
     LoginComponent,
     AdminComponent,
-    AdminKindComponent
+    AdminKindComponent,
+    AdminShipperComponent,
+    AdminProductComponent
   ],
   imports: [
     BrowserModule,

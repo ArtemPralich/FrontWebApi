@@ -1,24 +1,20 @@
 <table class="table table-hover">
-    <caption>Kinds</caption>
+    <caption>Shippers</caption>
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>About</th>
             <th>Delete</th>
             <th>Edit</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let kind of kinds">
+        <tr *ngFor="let shipper of shippers">
             <td>
-                {{kind.kindId}}
+                {{shipper.shipperId}}
             </td>
             <td>
-                {{kind.name}}
-            </td>
-            <td>
-                {{kind.about}}
+                {{shipper.name}}
             </td>
             <td>
                 del

@@ -10,6 +10,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
+import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
+
+
 
 
 
@@ -21,6 +24,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent,
     children: [
       { path: 'kinds', component: AdminKindComponent,},
+      { path: 'shippers', component: AdminShipperComponent,},
+      //{ path: 'products', component: AdminKindComponent,},
     ]
 },
   
