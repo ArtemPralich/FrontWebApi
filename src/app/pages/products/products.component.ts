@@ -7,13 +7,14 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'product-app',
-    templateUrl: `/product.html`
+    templateUrl: `/product.html`,
+    styleUrls: ['./product.css']
 })
 
 export class ProductComponent implements OnInit{
     Params = {
         currency: "rub",
-        pageSize: 10,
+        pageSize: 15,
         minPrice: "0",
         orderBy:"",
         maxPrice: "5000000000000",
