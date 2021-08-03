@@ -7,6 +7,52 @@
     <button type="submit" class="btn btn-dark" (click)="setKindId()">Enter</button>
 </form>
 
+<p>
+    <label>Поиск</label>
+    <input id="search" type="text" size="10" class="form-control" (input)="search()">
+</p>
+<div>
+    <div style="width:49%;float: left; margin: 0 2% 0 0;">
+        <p>
+            <label>Минимальная цена</label>
+            <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+        </p>
+    </div>
+    <div style="width:49%;float: left;">
+        <p>
+            <label>Максимальная цена</label>
+            <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+        </p>
+    </div>
+
+</div>
+
+<form method="post">
+    <div style="float:top;">
+        <p>
+            <label>Валюта</label><br/>
+            <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                <option selected>Open this select menu</option>
+                <option value="rub">Российские рубли</option>
+                <option value="byn">Белорусские рубли</option>
+                <option value="eur">Евро</option>
+                <option value="usd">Доллары</option>
+            </select>
+
+        </p>
+
+    </div>
+</form>
+
+<form method="post">
+    <label>Сортировать по</label><br/>
+    <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+        <option value="name">Имя продукта</option>
+        <option value="price">Цена</option>
+    </select>
+</form>
+<br/>
+
 <table class="table table-hover">
     <caption>Products</caption>
     <thead>
@@ -14,8 +60,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <th>Delete</th>    
         </tr>
     </thead>
     <tbody>
@@ -24,17 +69,18 @@
                 {{product.productId}}
             </td>
             <td>
-                {{product.name}}
+                <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">
+                    {{product.name}}
+                </a>
             </td>
+            
             <td>
                 {{product.price}}
             </td>
             <td>
                 <button type="button" class="btn btn-dark" >Delete</button>
             </td>
-            <td>
-                <button type="button" class="btn btn-dark">Edit</button>
-            </td>
+            
         </tr>
     </tbody>
 </table>
