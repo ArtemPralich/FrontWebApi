@@ -6,7 +6,8 @@ import { OnInit } from '@angular/core';
 
 @Component({
     selector: 'kind-app',
-    templateUrl: `/kind.html`
+    templateUrl: `/kind.html`,
+    styleUrls: ['./kind.css'],
 })
 
 export class KindComponent implements OnInit{

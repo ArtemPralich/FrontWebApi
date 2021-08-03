@@ -18,8 +18,6 @@ import { ProductComponent } from './pages/products/products.component';
 import { ProductService } from './service/ProductService';
 import { LoginComponent } from './pages/login/login.component';
 
-import { KindModule } from './pages/kind/kind.module';
-
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
@@ -50,7 +48,8 @@ import { AdminProductComponent } from './pages/admin-product/admin-product.compo
     AdminComponent,
     AdminKindComponent,
     AdminShipperComponent,
-    AdminProductComponent
+    AdminProductComponent,
+    KindComponent
   ],
   imports: [
     BrowserModule,

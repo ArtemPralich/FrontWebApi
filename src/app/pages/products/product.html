@@ -1,42 +1,79 @@
-<p>
-    <label>Поиск</label>
-    <input id="search" type="text" size="10" (input)="search()">
-</p>
-<p>
-    <label>Минимальная цена</label>
-    <input id="minPrice" type="text" size="10" (input)="changePrice()">
-</p>
-<p>
-    <label>Максимальная цена</label>
-    <input id="maxPrice" type="text" size="10" (input)="changePrice()">
-</p>
+<div style="float: left;width: 75%; margin-right: 2%;">
+    <table style="table-layout: fixed;" class="table table-hover">
+        <caption>Products</caption>
+        <thead>
+            <tr>
 
-
-<form method="post">
-    <label>Валюта</label><br/>
-    <select id="selectCurrency"   (change)="currency();" >
-        <option value="rub">Российские рубли</option>
-        <option value="byn">Белорусские рубли</option>
-        <option value="eur">Евро</option>
-        <option value="usd">Доллары</option>
-    </select>
-</form>
-
-<form method="post">
-    <label>Сортировать по</label><br/>
-    <select multiple size="2" id="sort" (change)="sort();" >
-        <option value="name">Имя продукта</option>
-        <option value="price">Цена</option>
-    </select>
-</form>
+                <th>Foto</th>
+                <th>Name</th>
+                <th>Price</th> 
+                <th>Shipper</th>   
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>
+                    <div style="width: 100px; height: 100px; background-color: grey;"></div>
+                </td>
+                <td>
+                    <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">
+                        {{product.name}}
+                    </a>
+                </td>
+                <td>
+                    {{product.price}}
+                </td> 
+                <td>
+                    shipper
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
 <br/>
-<br/>
-<ul *ngFor="let product of products">
-    <li>
-        <p>
-            {{product.name}}<br/>
-            {{product.productId}}<br/>
-            {{product.price}}
+<div style="margin:0 0%;float: left;width: 20%; background-color: rgb(238, 234, 234);">
+    <div style="width: 90%; margin: 0 auto;">
+        <p style="margin:10px 0">
+            <label>Поиск</label>
+            <input id="search" type="text" size="10" class="form-control" (input)="search()">
         </p>
-    </li>
-</ul>
+        <div>
+            <div style="width:49%;float: left; margin: 0 2% 0 0;">
+                <p>
+                    <label>Минимальная цена</label>
+                    <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                </p>
+            </div>
+            <div style="width:49%;float: left;">
+                <p>
+                    <label>Максимальная цена</label>
+                    <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                </p>
+            </div>
+        </div>
+        <form method="post">
+            <div style="float:top;">
+                <p>
+                    <label>Валюта</label><br/>
+                    <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                        <option selected>Open this select menu</option>
+                        <option value="rub">Российские рубли</option>
+                        <option value="byn">Белорусские рубли</option>
+                        <option value="eur">Евро</option>
+                        <option value="usd">Доллары</option>
+                    </select>
+        
+                </p>
+        
+            </div>
+        </form>
+        
+        <form style="margin: 0 0px 15px 0;" method="post">
+            <label>Сортировать по</label><br/>
+            <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+                <option value="name">Имя продукта</option>
+                <option value="price">Цена</option>
+            </select>
+        </form>
+    </div>
+</div>

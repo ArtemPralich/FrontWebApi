@@ -4,8 +4,7 @@ import { Observable } from "rxjs";
 import { ProductService } from '../../service/ProductService';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-//import * as $ from "jquery";
-//declare var $:any;
+
 @Component({
     selector: 'product-app',
     templateUrl: `/product.html`
@@ -21,7 +20,7 @@ export class ProductComponent implements OnInit{
         searchTerm: "",
     };
     public products: IProduct[] =[];
-    public kindId: number = 0;
+    public kindId: number = 1;
     constructor(private productsService: ProductService, private route: ActivatedRoute) {
     }
     search(){

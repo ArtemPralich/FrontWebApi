@@ -13,15 +13,16 @@ import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
 import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 
-
-
-
-
-
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'kinds', component: KindComponent,},
+  { path: 'kinds', component: KindComponent,
+    children:[
+      { path: ':id/products', component: ProductComponent,},
+      //{ path: 'kinds/:id/',component: ProductComponent}
+    ]
+  
+  },
   { path: 'admin', component: AdminComponent,
     children: [
       { path: 'kinds', component: AdminKindComponent,},
@@ -29,8 +30,8 @@ const routes: Routes = [
       { path: 'products', component: AdminProductComponent,},
       { path: 'kinds/:id/products', component: AdminProductComponent,},
     ]
-},
-  { path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
+  },
+  //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
