@@ -32,6 +32,7 @@ import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
 import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 import { FooterComponent } from './sections/footer/footer.component';
+import { PaginationComponent } from './sections/pagination/pagination.component';
 
 
 
@@ -52,7 +53,8 @@ import { FooterComponent } from './sections/footer/footer.component';
     AdminShipperComponent,
     AdminProductComponent,
     KindComponent,
-    FooterComponent
+    FooterComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

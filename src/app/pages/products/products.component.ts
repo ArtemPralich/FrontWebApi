@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { ProductService } from '../../service/ProductService';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IGetAllProduct } from 'src/app/interface/IGetAllProduct';
 
 @Component({
     selector: 'product-app',
@@ -20,7 +21,11 @@ export class ProductComponent implements OnInit{
         maxPrice: "5000000000000",
         searchTerm: "",
     };
-    public products: IProduct[] =[];
+    public getProducts: IGetAllProduct = {
+        countPage: 1,
+        currentPage:1,
+        productsDto: []
+      }
     public kindId: number = 1;
     constructor(private productsService: ProductService, private route: ActivatedRoute) {
     }
@@ -51,7 +56,7 @@ export class ProductComponent implements OnInit{
             }
         );
         this.productsService.ReturnAllProducts(this.kindId, this.Params).subscribe(res => {
-            this.products = res;
+            this.getProducts = res;
         });
     }
     ngOnInit(){

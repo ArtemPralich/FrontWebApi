@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 import { KindService } from './service/KindService';
 import { OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
  // template:" <header-app></header-app>"

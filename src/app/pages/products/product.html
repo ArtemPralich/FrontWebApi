@@ -1,5 +1,5 @@
 <div style="float: left;width: 75%; margin:10px 2%;">
-    <div *ngFor="let product of products" class="catalog-item">
+    <div *ngFor="let product of getProducts.productsDto" class="catalog-item">
         <div style="width: 60%; height:150px; margin: 15px auto;  background-color: rgb(192, 176, 176);"></div>
         <div style="height:10%; overflow: hidden;">
             <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">

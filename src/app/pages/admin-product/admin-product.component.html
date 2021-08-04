@@ -1,73 +1,114 @@
-<p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Ссылка с href
-    </a>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Кнопка с data-target
-    </button>
-  </p>
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
-    </div>
-  </div>
+
 
 
 
 <form style="margin: 10px 0px;">
-    <div  class="form-group">
+    <div style="width: 100%;">
         <label>ID kind</label>
-        <input id="productKindId" type="number" value="1" class="form-control">
+        <div style="width: 100%;">
+            <div style="width: 95%; float: left;" class="form-group">
+                <input id="productKindId" type="number" value="1" class="form-control">
+            </div>
+            <div style="width: auto; float: right;">
+                <button type="submit"  class="btn btn-dark" (click)="setKindId()">Enter</button>
+            </div>
+        </div>
     </div>
-    
-    <button type="submit" class="btn btn-dark" (click)="setKindId()">Enter</button>
 </form>
 
-<p>
-    <label>Поиск</label>
-    <input id="search" type="text" size="10" class="form-control" (input)="search()">
-</p>
 <div>
-    <div style="width:49%;float: left; margin: 0 2% 0 0;">
-        <p>
-            <label>Минимальная цена</label>
-            <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
-        </p>
+    <p>
+        <button style="margin-top:10px;float:right; margin-left: 1%;" class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalCenter" >
+            Add
+        </button>
+    </p>
+    <p>
+        <button style="margin-top:10px;float:right;" class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Filtering and searching
+        </button>
+    </p>
+    <div class="collapse" style="width: 100%;float:left;margin-top:10px;" id="collapseExample">
+        <div class="card card-body">
+            <p>
+                <label>Поиск</label>
+                <input id="search" type="text" size="10" class="form-control" (input)="search()">
+            </p>
+            <div>
+                <div style="width:49%;float: left; margin: 0 2% 0 0;">
+                    <p>
+                        <label>Минимальная цена</label>
+                        <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                    </p>
+                </div>
+                <div style="width:49%;float: left;">
+                    <p>
+                        <label>Максимальная цена</label>
+                        <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                    </p>
+                </div>
+            
+            </div>
+            
+            <form method="post">
+                <div style="float:top;">
+                    <p>
+                        <label>Валюта</label><br/>
+                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                            <option selected>Open this select menu</option>
+                            <option value="rub">Российские рубли</option>
+                            <option value="byn">Белорусские рубли</option>
+                            <option value="eur">Евро</option>
+                            <option value="usd">Доллары</option>
+                        </select>
+            
+                    </p>
+            
+                </div>
+            </form>
+            
+            <form method="post">
+                <label>Сортировать по</label><br/>
+                <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+                    <option value="name">Имя продукта</option>
+                    <option value="price">Цена</option>
+                </select>
+            </form>
+            <br/>
+        </div>
     </div>
-    <div style="width:49%;float: left;">
-        <p>
-            <label>Максимальная цена</label>
-            <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
-        </p>
-    </div>
-
 </div>
 
-<form method="post">
-    <div style="float:top;">
-        <p>
-            <label>Валюта</label><br/>
-            <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
-                <option selected>Open this select menu</option>
-                <option value="rub">Российские рубли</option>
-                <option value="byn">Белорусские рубли</option>
-                <option value="eur">Евро</option>
-                <option value="usd">Доллары</option>
-            </select>
 
-        </p>
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                <label>Name</label>
+                <input id="search" type="text" size="10" class="form-control">
+            </p>
+            <p>
+                <label>Price</label>
+                <input id="search" type="number" size="10" class="form-control">
+            </p>
+            <p>
+                <label>KindId</label>
+                <input id="search" type="number" size="10" value="{{this.kindId}}" class="form-control">
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-dark">Add</button>
+        </div>
+      </div>
     </div>
-</form>
-
-<form method="post">
-    <label>Сортировать по</label><br/>
-    <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
-        <option value="name">Имя продукта</option>
-        <option value="price">Цена</option>
-    </select>
-</form>
-<br/>
+  </div>
 
 <table class="table table-hover">
     <caption>Products</caption>
@@ -76,11 +117,12 @@
             <th>Id</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Delete</th>    
+            <th>Delete</th>
+            <th>Edit</th>    
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of getProducts.productsDto">
             <td>
                 {{product.productId}}
             </td>
@@ -96,7 +138,14 @@
             <td>
                 <button type="button" class="btn btn-dark" >Delete</button>
             </td>
+            <td>
+                <button type="button" class="btn btn-dark" >Edit</button>
+            </td>
             
         </tr>
     </tbody>
 </table>
+
+
+
+
