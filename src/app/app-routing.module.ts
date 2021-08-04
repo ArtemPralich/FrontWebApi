@@ -12,7 +12,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
 import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
-
+import { PaginationComponent } from './sections/pagination/pagination.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},

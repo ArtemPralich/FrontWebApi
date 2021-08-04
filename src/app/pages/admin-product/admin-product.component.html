@@ -91,15 +91,15 @@
         <div class="modal-body">
             <p>
                 <label>Name</label>
-                <input id="search" type="text" size="10" class="form-control">
+                <input id="" type="text" size="10" class="form-control">
             </p>
             <p>
                 <label>Price</label>
-                <input id="search" type="number" size="10" class="form-control">
+                <input id="" type="number" size="10" class="form-control">
             </p>
             <p>
                 <label>KindId</label>
-                <input id="search" type="number" size="10" value="{{this.kindId}}" class="form-control">
+                <input id="" type="number" size="10" value="{{this.kindId}}" class="form-control">
             </p>
         </div>
         <div class="modal-footer">
@@ -145,7 +145,7 @@
         </tr>
     </tbody>
 </table>
-
+<app-pagination (click)="this.get()"></app-pagination>
 
 
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminProductComponent } from 'src/app/pages/admin-product/admin-product.component';
+import { PaginationService } from 'src/app/service/PaginationService';
 
 @Component({
   selector: 'app-pagination',
@@ -6,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(public adminProduct : AdminProductComponent, public pagination : PaginationService) { }
+  
   ngOnInit(): void {
   }
 

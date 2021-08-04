@@ -33,6 +33,7 @@ import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.compo
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
+import { PaginationService } from './service/PaginationService';
 
 
 
@@ -51,10 +52,10 @@ import { PaginationComponent } from './sections/pagination/pagination.component'
     AdminComponent,
     AdminKindComponent,
     AdminShipperComponent,
-    AdminProductComponent,
     KindComponent,
     FooterComponent,
-    PaginationComponent
+    PaginationComponent,
+    AdminProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,11 +63,10 @@ import { PaginationComponent } from './sections/pagination/pagination.component'
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
-  providers: [KindService, ShipperService, ProductService, LoginService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

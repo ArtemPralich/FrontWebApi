@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { param } from 'jquery';
 import { IGetAllProduct } from 'src/app/interface/IGetAllProduct';
 import { IProduct } from 'src/app/interface/IProduct';
+import { PaginationComponent } from 'src/app/sections/pagination/pagination.component';
+import { PaginationService } from 'src/app/service/PaginationService';
 import { ProductService } from 'src/app/service/ProductService';
 
 @Component({
@@ -13,7 +15,8 @@ import { ProductService } from 'src/app/service/ProductService';
 export class AdminProductComponent implements OnInit {
   Params = {
     currency: "rub",
-    pageSize: 15,
+    pageSize: 1,
+    pageNumber: 1,
     minPrice: "0",
     orderBy:"",
     maxPrice: "5000000000000",
@@ -25,13 +28,13 @@ export class AdminProductComponent implements OnInit {
     productsDto: []
   }
   public kindId: number = 1;
-  constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute) { 
+  constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute, public pagination: PaginationService) { 
     this.route.params.subscribe(
       params => {
         if(params["id"] != null) {
             this.kindId = params['id'];
           }  
-          console.log(params["id"])
+          //console.log(params["id"])
       }
   );}
   
@@ -45,6 +48,7 @@ export class AdminProductComponent implements OnInit {
       
   }
   currency() {
+      alert(this.pagination.test)
       this.Params.currency = (<HTMLInputElement>document.getElementById("selectCurrency")).value;
       this.get();
   }
@@ -59,9 +63,12 @@ export class AdminProductComponent implements OnInit {
     this.get();
   }
   get(){
+    this.Params.pageNumber = this.pagination.currentPage;
+    console.log(this.pagination.currentPage)
+    
     this.productService.ReturnAllProducts(this.kindId, this.Params ).subscribe(res => {
       this.getProducts = res;
-      alert(this.getProducts.countPage)
+      //alert(this.getProducts.countPage)
       this.router.navigate([`admin/kinds/${this.kindId}/products`]);
     }, error => {
       alert("Invalid value kindId");
@@ -69,7 +76,6 @@ export class AdminProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
     this.get()
   }
 
