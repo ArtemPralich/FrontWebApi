@@ -15,7 +15,7 @@ import { ProductService } from 'src/app/service/ProductService';
 export class AdminProductComponent implements OnInit {
   Params = {
     currency: "rub",
-    pageSize: 1,
+    pageSize: 15,
     pageNumber: 1,
     minPrice: "0",
     orderBy:"",
@@ -64,15 +64,18 @@ export class AdminProductComponent implements OnInit {
   }
   get(){
     this.Params.pageNumber = this.pagination.currentPage;
+    
     console.log(this.pagination.currentPage)
     
     this.productService.ReturnAllProducts(this.kindId, this.Params ).subscribe(res => {
       this.getProducts = res;
-      //alert(this.getProducts.countPage)
-      this.router.navigate([`admin/kinds/${this.kindId}/products`]);
+      this.pagination.countAllPage = this.getProducts.countPage;
+      //this.router.navigate([`admin/kinds/${this.kindId}/products`]);
     }, error => {
       alert("Invalid value kindId");
     });
+    //this.pagination.countAllPage = this.getProducts.countPage;
+    
   }
 
   ngOnInit(): void {

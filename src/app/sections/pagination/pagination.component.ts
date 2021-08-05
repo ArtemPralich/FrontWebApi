@@ -10,6 +10,10 @@ import { PaginationService } from 'src/app/service/PaginationService';
 export class PaginationComponent implements OnInit {
   constructor(public adminProduct : AdminProductComponent, public pagination : PaginationService) { }
   
+  al(){
+    alert("")
+  }
+
   ngOnInit(): void {
   }
 
