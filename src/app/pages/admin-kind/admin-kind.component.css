@@ -7,3 +7,9 @@
 .tableProductEdit{
     width: 10%;
 }
+.tableProductName{
+    width: 20%;
+}
+.tableProductAbout{
+    width: auto;
+}

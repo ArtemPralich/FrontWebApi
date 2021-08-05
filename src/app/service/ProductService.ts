@@ -27,4 +27,7 @@ export class ProductService {
     public EditProduct(kindId:number, id:number, product : IProduct):Observable<any>{
       return this.http.put<any>(`${this.pathBase}`+ `${kindId}` + "/products/" + `${id}`, product , { headers: this.myHeaders });
     }
+    public DeleteProduct(kindId:number, id:number,){
+      return this.http.delete<any>(`${this.pathBase}`+ `${kindId}` + "/products/" + `${id}`, { headers: this.myHeaders });
+    }
 }

@@ -20,7 +20,7 @@ export class KindService {
 
   public ReturnAllKinds():Observable<IKind[]> {
       
-    return this.http.get<IKind[]>(`${this.pathBase}`, { headers: this.myHeaders });
+    return this.http.get<IKind[]>(`${this.pathBase}`);
   }
 
   public ReturnKind(id:number):Observable<IKind>{
@@ -35,8 +35,10 @@ export class KindService {
 
   public DeleteKind(id: number):Observable<any>{
 
-    return this.http.delete<any>(`${this.pathBase}/${id}`);
+    return this.http.delete<any>(`${this.pathBase}/${id}`, { headers: this.myHeaders } );
   }
-
+  public EditKind(kindId:number, kind : IKind):Observable<any>{
+    return this.http.put<any>(`${this.pathBase}/${kindId}`, kind , { headers: this.myHeaders });
+  }
 
 }

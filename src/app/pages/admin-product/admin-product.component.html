@@ -5,10 +5,10 @@
 <form style="margin: 10px 0px;">
     <div style="width: 100%;">
         <label>ID kind</label>
-        <div style="width: 100%;">
+        <div  style="width: 100%;">
             <div style="width: 95%; float: left;" class="form-group">
-                <input id="productKindId" type="number" value="this.kindId" class="form-control">
-            </div>
+                <input id="productKindId" type="number" name="123" [(ngModel)]="this.kindId" class="form-control">
+            </div> 
             <div style="width: auto; float: right;">
                 <button type="submit"  class="btn btn-dark" (click)="setKindId()">Enter</button>
             </div>
@@ -83,7 +83,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Add product</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Add kind</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -136,7 +136,7 @@
                 {{product.price}}
             </td>
             <td>
-                <button type="button" class="btn btn-dark" >Delete</button>
+                <button type="button" class="btn btn-dark" (click)="delete(product.productId)" >Delete</button>
             </td>
             <td>
                 <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit" (click)="initEdit(product.productId, product.name, product.price)" >Edit</button>

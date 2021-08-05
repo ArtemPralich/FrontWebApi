@@ -18,6 +18,7 @@ export class AdminKindComponent implements OnInit {
     name : "",
     about : ""
   };
+  public editKind: IKind = this.kind;
   constructor(private kindService : KindService, private router : Router) { }
 
   ngOnInit(): void {
@@ -25,12 +26,17 @@ export class AdminKindComponent implements OnInit {
       this.kinds = res;
     });
   }
+  initEdit(name:string, about:string, id:number){
+    this.editKind.name = name;
+    this.editKind.about = about;
+    this.editKind.kindId = id;
+  }
   create(){ 
-    
-    this.kind.name =(<HTMLInputElement>document.getElementById("kindName")).value;
-    this.kind.about =(<HTMLInputElement>document.getElementById("kindAbout")).value;
     console.log(this.kind.name);
-    this.kindService.CreateKind(this.kind).subscribe((data)=>{console.log("created");});
+    this.kindService.CreateKind(this.kind).subscribe((data)=>{console.log("created");},
+    error=>{
+      alert("Creare kind failed")
+    });
     
     location.reload();
   }
@@ -38,5 +44,10 @@ export class AdminKindComponent implements OnInit {
     this.kindService.DeleteKind(id).subscribe((data)=>{
       console.log("deleted");});
     location.reload();
+  }
+  edit(id:number){
+    this.kindService.EditKind(id, this.editKind ).subscribe((data)=>{ 
+      console.log("edited");});
+      location.reload();
   }
 }
