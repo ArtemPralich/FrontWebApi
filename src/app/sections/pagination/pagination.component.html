@@ -1,11 +1,11 @@
-<nav aria-label="Page navigation example" >
+<nav  aria-label="Page navigation example" >
     <ul class="pagination">
         <li class="page-item">
             <p class="page-link" (click)="this.pagination.changePage(-1);" >
                 <
             </p>
         </li>
-        <li *ngIf="this.pagination.currentPage!=1" class="page-item" (click)="this.pagination.changePage(-1);">
+        <li *ngIf="this.pagination.currentPage>1" class="page-item" (click)="this.pagination.changePage(-1);">
             <p class="page-link" >
                 {{this.pagination.currentPage-1}}
             </p>
@@ -15,7 +15,7 @@
                 {{this.pagination.currentPage}}
             </p>
         </li>
-        <li *ngIf="this.pagination.currentPage!=this.pagination.countAllPage" class="page-item" (click)="this.pagination.changePage(+1);">
+        <li *ngIf="this.pagination.currentPage<this.pagination.countAllPage" class="page-item" (click)="this.pagination.changePage(+1);">
             <p class="page-link" >
                 {{this.pagination.currentPage+1}}
             </p>
