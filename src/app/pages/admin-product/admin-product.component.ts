@@ -27,17 +27,33 @@ export class AdminProductComponent implements OnInit {
     currentPage:1,
     productsDto: []
   }
+  public actProduct:IProduct={
+    productId:0,
+    name:"",
+    price:0
+  }
+  public editProduct:IProduct={
+    productId:0,
+    name:"",
+    price:0
+  }
   public kindId: number = 1;
+
   constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute, public pagination: PaginationService) { 
     this.route.params.subscribe(
       params => {
         if(params["id"] != null) {
+            alert("")
             this.kindId = params['id'];
-          }  
+        }
           //console.log(params["id"])
       }
   );}
-  
+  initEdit(id:number, name:string, price:number){
+    this.editProduct.name = name;
+    this.editProduct.price = price;
+    this.editProduct.productId = id;
+  }
   search(){
       this.Params.searchTerm = (<HTMLInputElement>document.getElementById("search")).value;
       this.get();
@@ -48,7 +64,6 @@ export class AdminProductComponent implements OnInit {
       
   }
   currency() {
-      alert(this.pagination.test)
       this.Params.currency = (<HTMLInputElement>document.getElementById("selectCurrency")).value;
       this.get();
   }
@@ -62,22 +77,40 @@ export class AdminProductComponent implements OnInit {
     this.kindId =+((<HTMLInputElement>document.getElementById("productKindId")).value);
     this.get();
   }
+  
   get(){
     this.Params.pageNumber = this.pagination.currentPage;
-    
     console.log(this.pagination.currentPage)
-    
+
     this.productService.ReturnAllProducts(this.kindId, this.Params ).subscribe(res => {
       this.getProducts = res;
       this.pagination.countAllPage = this.getProducts.countPage;
       //this.router.navigate([`admin/kinds/${this.kindId}/products`]);
     }, error => {
-      alert("Invalid value kindId");
+      alert("Get failed");
     });
     //this.pagination.countAllPage = this.getProducts.countPage;
-    
   }
 
+  create(){
+    this.productService.CreateProduct(this.kindId,this.actProduct).subscribe(res=>{
+      console.log("cteated")
+    }, error =>{
+      alert("Create failed");
+    })
+    this.actProduct.name = "";
+    this.actProduct.price = 0;
+    location.reload();
+  }
+
+  edit(){
+    this.productService.EditProduct(this.kindId, this.editProduct.productId, this.editProduct).subscribe(res=>{
+      console.log("edited")
+    },error =>{
+      alert("Edit failed");
+    })
+    location.reload();
+  }
   ngOnInit(): void {
     this.get()
   }

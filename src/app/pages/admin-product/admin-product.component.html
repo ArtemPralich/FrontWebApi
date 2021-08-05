@@ -7,7 +7,7 @@
         <label>ID kind</label>
         <div style="width: 100%;">
             <div style="width: 95%; float: left;" class="form-group">
-                <input id="productKindId" type="number" value="1" class="form-control">
+                <input id="productKindId" type="number" value="this.kindId" class="form-control">
             </div>
             <div style="width: auto; float: right;">
                 <button type="submit"  class="btn btn-dark" (click)="setKindId()">Enter</button>
@@ -91,20 +91,20 @@
         <div class="modal-body">
             <p>
                 <label>Name</label>
-                <input id="" type="text" size="10" class="form-control">
+                <input id="" type="text" size="10" class="form-control" [(ngModel)]="this.actProduct.name" >
             </p>
             <p>
                 <label>Price</label>
-                <input id="" type="number" size="10" class="form-control">
+                <input id="" type="number" size="10" class="form-control"  [(ngModel)]="this.actProduct.price">
             </p>
             <p>
                 <label>KindId</label>
-                <input id="search" type="number" size="10" value="{{this.kindId}}" class="form-control">
+                <input id="search" type="number" size="10" class="form-control" value="{{this.kindId}}" [(ngModel)]="this.kindId">
             </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-dark">Add</button>
+          <button type="button" class="btn btn-dark" (click)="create()" data-dismiss="modal" >Add </button>
         </div>
       </div>
     </div>
@@ -114,11 +114,11 @@
     <caption>Products</caption>
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Delete</th>
-            <th>Edit</th>    
+            <th class="tableKindId">Id</th>
+            <th class="tableKindName">Name</th>
+            <th class="tableKindPrice">Price</th>
+            <th class="tableKindDelete">Delete</th>
+            <th class="tableKindEdit">Edit</th>    
         </tr>
     </thead>
     <tbody>
@@ -139,13 +139,48 @@
                 <button type="button" class="btn btn-dark" >Delete</button>
             </td>
             <td>
-                <button type="button" class="btn btn-dark" >Edit</button>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit" (click)="initEdit(product.productId, product.name, product.price)" >Edit</button>
+
+                <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Edit product</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <p>
+                                <label>Name</label>
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.editProduct.name">
+                            </p>
+                            <p>
+                                <label>Price</label>
+                                <input type="number" size="10" class="form-control" [(ngModel)]="this.editProduct.price">
+                            </p>
+                            <p>
+                                <label>KindId</label>
+                                <input type="number" size="10" class="form-control" value="{{this.kindId}}" [(ngModel)]="this.kindId">
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="this.edit()" >Add </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+
             </td>
             
         </tr>
     </tbody>
 </table>
 <app-pagination (click)="this.get()"></app-pagination>
+
 
 
 
