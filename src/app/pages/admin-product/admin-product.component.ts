@@ -4,7 +4,9 @@ import { param } from 'jquery';
 import { IGetAllProduct } from 'src/app/interface/IGetAllProduct';
 import { IProduct } from 'src/app/interface/IProduct';
 import { PaginationComponent } from 'src/app/sections/pagination/pagination.component';
+import { KindService } from 'src/app/service/KindService';
 import { PaginationService } from 'src/app/service/PaginationService';
+import { ParamsProductService } from 'src/app/service/ParamsProductService';
 import { ProductService } from 'src/app/service/ProductService';
 
 @Component({
@@ -13,16 +15,6 @@ import { ProductService } from 'src/app/service/ProductService';
   styleUrls: ['./admin-product.component.css']
 })
 export class AdminProductComponent implements OnInit {
-  Params = {
-    currency: "rub",
-    pageSize: 5,
-    pageNumber: 1,
-    minPrice: "0",
-    orderBy:"",
-    maxPrice: "5000000000000",
-    searchTerm: "",
-};
-
   public getProducts: IGetAllProduct = {
     countPage: 1,
     currentPage:1,
@@ -42,8 +34,8 @@ export class AdminProductComponent implements OnInit {
   }
 
   public kindId: number = 1;
-
-  constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute, public pagination: PaginationService) { 
+  public kindName: string = "";
+  constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService, private kindService :KindService) { 
     this.route.params.subscribe(
       params => {
         if(params["id"] != null) {
@@ -52,32 +44,8 @@ export class AdminProductComponent implements OnInit {
           //console.log(params["id"])
       }
   );}
-  initEdit(id:number, name:string, price:number){
-    this.editProduct.name = name;
-    this.editProduct.price = price;
-    this.editProduct.productId = id;
-  }
-
-  search(){
-      this.Params.searchTerm = (<HTMLInputElement>document.getElementById("search")).value;
-      this.get();
-  }
-
-  sort(){
-      this.Params.orderBy = (<HTMLInputElement>document.getElementById("sort")).value;
-      this.get();
-      
-  }
-
-  currency() {
-      this.Params.currency = (<HTMLInputElement>document.getElementById("selectCurrency")).value;
-      this.get();
-  }
-
-  changePrice(){
-      this.Params.minPrice = (<HTMLInputElement>document.getElementById("minPrice")).value; 
-      this.Params.maxPrice = (<HTMLInputElement>document.getElementById("maxPrice")).value;
-      this.get();
+  initEdit(pr: IProduct){
+    this.editProduct = pr;
   }
 
   setKindId(){  
@@ -87,10 +55,11 @@ export class AdminProductComponent implements OnInit {
   }
 
   get(){
-    this.Params.pageNumber = this.pagination.currentPage;
-    console.log(this.pagination.currentPage)
-
-    this.productService.ReturnAllProducts(this.kindId, this.Params ).subscribe(res => {
+    this.params.Params.pageNumber = this.pagination.currentPage;
+    this.kindService.ReturnKind(this.kindId).subscribe(res=>{
+      this.kindName = res.name;
+    })
+    this.productService.ReturnAllProducts(this.kindId, this.params.Params ).subscribe(res => {
       this.getProducts = res;
       this.pagination.countAllPage = this.getProducts.countPage;
       //this.router.navigate([`admin/kinds/${this.kindId}/products`]);

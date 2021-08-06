@@ -6,7 +6,7 @@ import { OnInit } from '@angular/core';
 
 @Component({
     selector: 'shipper-app',
-    templateUrl: `/shipper.html`
+    templateUrl: `/shipper.component.html`
 })
 
 export class ShipperComponent implements OnInit{

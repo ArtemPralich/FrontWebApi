@@ -1,4 +1,14 @@
-
+<div style="margin-top:10px;">
+  <label>Search</label>
+  <div>
+    <div style="width: 95%; float: left;">
+      <input id="search" type="text" size="10" class="form-control" [(ngModel)]="this.Params.searchTerm"  >
+    </div>
+    <div style="width: auto; float: right;">
+      <button type="submit"  class="btn btn-dark" (click)="this.get()" >Enter</button>
+    </div>
+  </div>
+</div>
 
 <button style="margin-top:10px;float:right; margin-left: 1%;" class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalCreateKind" >
     Create
@@ -59,7 +69,7 @@
             </td>
             <td>
                 
-                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalEditKind" (click)="this.initEdit(kind.name,kind.about,kind.kindId)" >
+                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalEditKind" (click)="this.initEdit(kind)" >
                     Edit
                 </button>
                 <div class="modal fade" id="exampleModalEditKind" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

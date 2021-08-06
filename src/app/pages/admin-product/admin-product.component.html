@@ -13,6 +13,7 @@
 </form>
 
 <div>
+    <p style="margin-top:20px;float:left;">{{this.kindName}}</p>
     <p>
         <button style="margin-top:10px;float:right; margin-left: 1%;" class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalCenter" >
             Create
@@ -27,19 +28,19 @@
         <div class="card card-body">
             <p>
                 <label>Поиск</label>
-                <input id="search" type="text" size="10" class="form-control" (input)="search()">
+                <input id="search" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.searchTerm">
             </p>
             <div>
                 <div style="width:49%;float: left; margin: 0 2% 0 0;">
                     <p>
                         <label>Минимальная цена</label>
-                        <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                        <input id="minPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.minPrice">
                     </p>
                 </div>
                 <div style="width:49%;float: left;">
                     <p>
                         <label>Максимальная цена</label>
-                        <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                        <input id="maxPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.maxPrice">
                     </p>
                 </div>
             
@@ -49,7 +50,7 @@
                 <div style="float:top;">
                     <p>
                         <label>Валюта</label><br/>
-                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="this.params.currency('selectCurrency');" >
                             <option selected>Open this select menu</option>
                             <option value="rub">Российские рубли</option>
                             <option value="byn">Белорусские рубли</option>
@@ -64,12 +65,13 @@
             
             <form method="post">
                 <label>Сортировать по</label><br/>
-                <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+                <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="this.params.sort('sort');" >
                     <option value="name">Имя продукта</option>
                     <option value="price">Цена</option>
                 </select>
             </form>
             <br/>
+            <button type="button" class="btn btn-secondary" style="width: 10%; margin: 0 auto;" data-dismiss="modal" (click)="get()">Enter</button>
         </div>
     </div>
 </div>
@@ -135,7 +137,7 @@
                 <button type="button" class="btn btn-dark" (click)="delete(product.productId)" >Delete</button>
             </td>
             <td>
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit" (click)="initEdit(product.productId, product.name, product.price)" >Edit</button>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit" (click)="initEdit(product)" >Edit</button>
 
                 <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">

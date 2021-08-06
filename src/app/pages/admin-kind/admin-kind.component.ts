@@ -23,7 +23,7 @@ export class AdminKindComponent implements OnInit {
 
   Params = {
     searchTerm: "",
-    pageSize: 1,
+    pageSize: 15,
     pageNumber: 1,
   };
 
@@ -48,10 +48,8 @@ export class AdminKindComponent implements OnInit {
     });
   }
 
-  initEdit(name:string, about:string, id:number){
-    this.editKind.name = name;
-    this.editKind.about = about;
-    this.editKind.kindId = id;
+  initEdit(k:IKind){
+    this.editKind = k;
   }
   create(){ 
     console.log(this.kind.name);

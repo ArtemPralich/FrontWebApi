@@ -1,20 +1,30 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { Injectable } from "@angular/core"; 
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+
 
 @Injectable()
 export class ParamsProductService {
-    constructor(private http:HttpClient){}
-    public Params = {
+    Params = {
         currency: "rub",
         pageSize: 15,
-        minPrice: "0",
+        pageNumber: 1,
+        minPrice: "",
         orderBy:"",
-        pageNumber:1,
-        maxPrice: "5000000000000",
+        maxPrice: "",
         searchTerm: "",
     };
-    public p : HttpParams = new HttpParams();
-    add(){
-        
+    
+    constructor(private http:HttpClient){
+      
     }
+    currency(str:string){
+        this.Params.currency = (<HTMLInputElement>document.getElementById(str)).value;
+    }
+    sort(str:string){
+        this.Params.orderBy = (<HTMLInputElement>document.getElementById(str)).value;
+    }
+    returnParams():any{
+        return this.Params;
+    }
+    
 }

@@ -17,21 +17,22 @@ export class KindComponent implements OnInit{
     currentPage:1,
     kindsDto: []
   }
-  Params = {
-    searchTerm: "",
-    pageSize: 5,
-    pageNumber: 1,
-  }
-
-    public kinds: IKind[] =[];
-    public pageNumber: number = 5;
-    constructor(private kindService: KindService) { }
-    al(){
-      console.log(this.pageNumber);
+    Params = {
+      searchTerm: "",
+      pageSize: 15,
+      pageNumber: 1,
     }
-    ngOnInit(){
+
+    
+    constructor(private kindService: KindService) { }
+   
+    get(){
       this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
         this.getKinds = res;
       });
+    }
+
+    ngOnInit(){
+      this.get();
     }
   }

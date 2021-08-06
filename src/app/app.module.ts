@@ -34,6 +34,7 @@ import { AdminProductComponent } from './pages/admin-product/admin-product.compo
 import { FooterComponent } from './sections/footer/footer.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
 import { PaginationService } from './service/PaginationService';
+import { ParamsProductService } from './service/ParamsProductService';
 
 
 
@@ -66,7 +67,7 @@ import { PaginationService } from './service/PaginationService';
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
-  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, ParamsProductService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

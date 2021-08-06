@@ -25,19 +25,19 @@
         <div style="width: 90%; margin: 0 auto;">
             <p style="margin:10px 0">
                 <label>Поиск</label>
-                <input id="search" type="text" size="10" class="form-control" (input)="search()">
+                <input id="search" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.searchTerm">
             </p>
             <div>
                 <div style="width:49%;float: left; margin: 0 2% 0 0;">
                     <p>
                         <label>Минимальная цена</label>
-                        <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                        <input id="minPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.minPrice">
                     </p>
                 </div>
                 <div style="width:49%;float: left;">
                     <p>
                         <label>Максимальная цена</label>
-                        <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                        <input id="maxPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.maxPrice">
                     </p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div style="float:top;">
                     <p>
                         <label>Валюта</label><br/>
-                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="this.params.currency('selectCurrency');" >
                             <option selected>Open this select menu</option>
                             <option value="rub">Российские рубли</option>
                             <option value="byn">Белорусские рубли</option>
@@ -60,11 +60,12 @@
             
             <form style="margin: 0 0px 15px 0;" method="post">
                 <label>Сортировать по</label><br/>
-                <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+                <select class="form-control form-select" id="sort" size="2" multiple aria-label="multiple select example" id="sort" (change)="this.params.sort('sort');" >
                     <option value="name">Имя продукта</option>
                     <option value="price">Цена</option>
                 </select>
             </form>
+            <button type="button" class="btn btn-secondary" style="margin: 0 35% 10px;" data-dismiss="modal" (click)="get()">Enter</button>
         </div>
     </div>
 </div>

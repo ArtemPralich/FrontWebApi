@@ -1,3 +1,8 @@
 .navs-items{
     margin: 10px 30px;
-    font-size: 15pt;}
+    font-size: 15pt;
+    color: rgb(7, 7, 7);
+}
+.nav-link{
+    color:rgb(79, 80, 79);
+}
