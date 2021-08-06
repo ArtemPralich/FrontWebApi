@@ -1,110 +1,71 @@
-<div style="float: left;width: 75%; margin:10px 2%;">
-    <div *ngFor="let product of getProducts.productsDto" class="catalog-item">
-        <div style="width: 60%; height:150px; margin: 15px auto;  background-color: rgb(192, 176, 176);"></div>
-        <div style="height:10%; overflow: hidden;">
-            <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">
-                {{product.name}}
-            </a>
-        </div>
-        <p>{{product.price}}</p>
-    </div>
-
-
-    <!-- <table style="table-layout: fixed;" class="table table-hover">
-        <caption>Products</caption>
-        <thead>
-            <tr>
-
-                <th>Foto</th>
-                <th>Name</th>
-                <th>Price</th> 
-                <th>Shipper</th>   
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products">
-                <td>
-                    <div style="width: 100px; height: 100px; background-color: rgb(167, 107, 107);"></div>
-                </td>
-                <td>
-                    <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">
-                        {{product.name}}
-                    </a>
-                </td>
-                <td>
-                    {{product.price}}
-                </td> 
-                <td>
-                    shipper
-                </td> 
-            </tr>
-        </tbody>
-    </table> -->
-<!--ПАГИНАЦИЯ     
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav> -->
-</div>
-<br/>
-<div style="margin:0 0%;float: left;width: 20%; background-color: rgb(238, 234, 234);">
-    <div style="width: 90%; margin: 0 auto;">
-        <p style="margin:10px 0">
-            <label>Поиск</label>
-            <input id="search" type="text" size="10" class="form-control" (input)="search()">
-        </p>
+<div>
+    <div style="float: left; width: 75%;"> 
         <div>
-            <div style="width:49%;float: left; margin: 0 2% 0 0;">
-                <p>
-                    <label>Минимальная цена</label>
-                    <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
-                </p>
+            <div style="margin:10px 2%;">
+                <div *ngFor="let product of getProducts.productsDto" class="catalog-item">
+                    <div style="width: 60%; height:150px; margin: 15px auto;  background-color: rgb(192, 176, 176);"></div>
+                    <div style="height:10%; overflow: hidden;">
+                        <a href="/admin/kinds/{{this.kindId}}/products/{{product.productId}}">
+                            {{product.name}}
+                        </a>
+                    </div>
+                    <p>{{product.price}}</p>
+                </div>
+                
             </div>
-            <div style="width:49%;float: left;">
-                <p>
-                    <label>Максимальная цена</label>
-                    <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
-                </p>
-            </div>
+    
         </div>
-        <form method="post">
-            <div style="float:top;">
-                <p>
-                    <label>Валюта</label><br/>
-                    <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
-                        <option selected>Open this select menu</option>
-                        <option value="rub">Российские рубли</option>
-                        <option value="byn">Белорусские рубли</option>
-                        <option value="eur">Евро</option>
-                        <option value="usd">Доллары</option>
-                    </select>
-        
-                </p>
-        
+        <div  style="margin:0px auto;">
+            <app-pagination (click)="this.get()"></app-pagination>
+        </div>
+
+    </div>
+    
+    <div style="margin:0 0%;float: left;width: 20%; background-color: rgb(238, 234, 234);">
+        <div style="width: 90%; margin: 0 auto;">
+            <p style="margin:10px 0">
+                <label>Поиск</label>
+                <input id="search" type="text" size="10" class="form-control" (input)="search()">
+            </p>
+            <div>
+                <div style="width:49%;float: left; margin: 0 2% 0 0;">
+                    <p>
+                        <label>Минимальная цена</label>
+                        <input id="minPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                    </p>
+                </div>
+                <div style="width:49%;float: left;">
+                    <p>
+                        <label>Максимальная цена</label>
+                        <input id="maxPrice" type="text" size="10" class="form-control" (input)="changePrice()">
+                    </p>
+                </div>
             </div>
-        </form>
-        
-        <form style="margin: 0 0px 15px 0;" method="post">
-            <label>Сортировать по</label><br/>
-            <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
-                <option value="name">Имя продукта</option>
-                <option value="price">Цена</option>
-            </select>
-        </form>
+            <form method="post">
+                <div style="float:top;">
+                    <p>
+                        <label>Валюта</label><br/>
+                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="currency();" >
+                            <option selected>Open this select menu</option>
+                            <option value="rub">Российские рубли</option>
+                            <option value="byn">Белорусские рубли</option>
+                            <option value="eur">Евро</option>
+                            <option value="usd">Доллары</option>
+                        </select>
+            
+                    </p>
+            
+                </div>
+            </form>
+            
+            <form style="margin: 0 0px 15px 0;" method="post">
+                <label>Сортировать по</label><br/>
+                <select class="form-control form-select" size="2" multiple aria-label="multiple select example" id="sort" (change)="sort();" >
+                    <option value="name">Имя продукта</option>
+                    <option value="price">Цена</option>
+                </select>
+            </form>
+        </div>
     </div>
 </div>
+

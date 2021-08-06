@@ -1,10 +1,10 @@
 .catalog-item{
     width: 18%; /* Ширина */
+    min-width: 200px ;
     height: 250px;
     margin: 0 2% 15px 0; /* Отступы */
     text-align: center; /* Выравнивание по центру */
     display: inline-block; /* Строчно-блочный элемент */
     vertical-align: top;
-    background-color: rgb(230, 233, 230);
-    
+    background-color: rgb(240, 240, 240);   
 }
