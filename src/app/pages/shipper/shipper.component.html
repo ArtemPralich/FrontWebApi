@@ -1,8 +1,31 @@
-<ul *ngFor="let shipper of shippers">
-    <li>
-        <p>
-            {{shipper.name}}<br/>
-            {{shipper.shipperId}}
-        </p>
-    </li>
-</ul>
+<div class="shipper"> 
+    <div class="table-shipper"> 
+        <table class="table table-hover">
+            <caption>Shippers</caption>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let shipper of shippers">
+                    <td>
+                        <div class="foto">
+                            
+                        </div>
+                    </td>
+                    <td>
+                        {{shipper.shipperId}}
+                    </td>
+                    <td>
+                        {{shipper.name}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
