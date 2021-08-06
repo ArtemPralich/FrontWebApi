@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IGetAllKinds } from 'src/app/interface/IGetAllKinds';
 import { IKind } from 'src/app/interface/IKind';
 import { KindService } from 'src/app/service/KindService';
+import { PaginationService } from 'src/app/service/PaginationService';
 import { IndexKind } from 'typescript';
 
 @Component({
@@ -12,20 +14,40 @@ import { IndexKind } from 'typescript';
 })
 export class AdminKindComponent implements OnInit {
   public kinds: IKind[] = [];
+  
+  public getKinds: IGetAllKinds = {
+    countPage: 1,
+    currentPage:1,
+    kindsDto: []
+  };
+
+  Params = {
+    searchTerm: "",
+    pageSize: 1,
+    pageNumber: 1,
+  };
 
   public kind : IKind = {
     kindId : 0,
     name : "",
     about : ""
   };
+
   public editKind: IKind = this.kind;
-  constructor(private kindService : KindService, private router : Router) { }
+  constructor(private kindService : KindService, private router : Router, private pagination: PaginationService) { }
 
   ngOnInit(): void {
-    this.kindService.ReturnAllKinds().subscribe(res => {
-      this.kinds = res;
+    this.get();
+  }
+
+  get(){
+    this.Params.pageNumber = this.pagination.currentPage;
+    this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
+      this.getKinds = res;
+      this.pagination.countAllPage = this.getKinds.countPage;
     });
   }
+
   initEdit(name:string, about:string, id:number){
     this.editKind.name = name;
     this.editKind.about = about;
@@ -37,7 +59,6 @@ export class AdminKindComponent implements OnInit {
     error=>{
       alert("Creare kind failed")
     });
-    
     location.reload();
   }
   delete(id:number){

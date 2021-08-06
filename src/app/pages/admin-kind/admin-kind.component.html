@@ -44,7 +44,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let kind of kinds">
+        <tr *ngFor="let kind of getKinds.kindsDto">
             <td>
                 {{kind.kindId}}
             </td>
@@ -95,3 +95,4 @@
         </tr>
     </tbody>
 </table>
+<app-pagination (click)="this.get()"></app-pagination>

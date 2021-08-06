@@ -15,7 +15,7 @@ import { ProductService } from 'src/app/service/ProductService';
 export class AdminProductComponent implements OnInit {
   Params = {
     currency: "rub",
-    pageSize: 15,
+    pageSize: 5,
     pageNumber: 1,
     minPrice: "0",
     orderBy:"",

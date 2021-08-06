@@ -4,7 +4,7 @@
             <li style="margin: 0 0 15px 0;">
                 Kinds 
             </li>
-            <li style="margin: 0 0 5px 0;" *ngFor="let kind of kinds">
+            <li style="margin: 0 0 5px 0;" *ngFor="let kind of getKinds.kindsDto">
                     <a href="/kinds/{{kind.kindId}}/products">{{kind.name}}</a><br/>
             </li>
             

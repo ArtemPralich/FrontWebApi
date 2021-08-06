@@ -30,4 +30,5 @@ export class ProductService {
     public DeleteProduct(kindId:number, id:number,){
       return this.http.delete<any>(`${this.pathBase}`+ `${kindId}` + "/products/" + `${id}`, { headers: this.myHeaders });
     }
+    
 }
