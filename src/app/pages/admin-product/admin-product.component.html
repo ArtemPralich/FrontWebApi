@@ -96,8 +96,24 @@
                 <input id="" type="number" size="10" class="form-control"  [(ngModel)]="this.actProduct.price">
             </p>
             <p>
+                <label>About</label>
+                <textarea id="" type="number" size="10" class="form-control"  [(ngModel)]="this.actProduct.about">
+
+                </textarea>
+            </p>
+            <p>
+                <label>ShipperId</label>
+                <input id="search" type="number" size="10" class="form-control"  [(ngModel)]="this.actProduct.shipperId">
+            </p>
+            <p>
                 <label>KindId</label>
                 <input id="search" type="number" size="10" class="form-control" value="{{this.kindId}}" [(ngModel)]="this.kindId">
+            </p>
+            <p>
+                <label>Foto</label>
+                <textarea id="" type="number" size="10" class="form-control"  [(ngModel)]="this.actProduct.foto">
+
+                </textarea>
             </p>
         </div>
         <div class="modal-footer">
@@ -114,9 +130,11 @@
         <tr>
             <th class="tableKindId">Id</th>
             <th class="tableKindName">Name</th>
+            <th class="tableKindName">About</th>
+            <th class="tableKindName">ShipperName</th>
             <th class="tableKindPrice">Price</th>
-            <th class="tableKindDelete">Delete</th>
-            <th class="tableKindEdit">Edit</th>    
+            <th class="tableKindButton">Delete</th>
+            <th class="tableKindButton">Edit</th>    
         </tr>
     </thead>
     <tbody>
@@ -129,7 +147,12 @@
                     {{product.name}}
                 </a>
             </td>
-            
+            <td>
+                {{product.about}}
+            </td>
+            <td>
+                {{product.shipperName}}
+            </td>
             <td>
                 {{product.price}}
             </td>
@@ -157,6 +180,18 @@
                             <p>
                                 <label>Price</label>
                                 <input type="number" size="10" class="form-control" [(ngModel)]="this.editProduct.price">
+                            </p>
+                            <p>
+                                <label>About</label>
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.editProduct.about">
+                            </p>
+                            <p>
+                                <label>Foto</label>
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.editProduct.foto">
+                            </p>
+                            <p>
+                                <label>ShipperId</label>
+                                <input type="number" size="10" class="form-control" [(ngModel)]="this.editProduct.shipperId">
                             </p>
                             <p>
                                 <label>KindId</label>

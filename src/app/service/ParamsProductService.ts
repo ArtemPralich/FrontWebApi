@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 export class ParamsProductService {
     Params = {
         currency: "rub",
-        pageSize: 15,
+        pageSize: 12,
         pageNumber: 1,
         minPrice: "",
         orderBy:"",

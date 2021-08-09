@@ -21,16 +21,24 @@ export class AdminProductComponent implements OnInit {
     productsDto: []
   }
 
-  public actProduct:IProduct={
+  public actProduct:IProduct={///Todo: add create about  
     productId:0,
     name:"",
-    price:0
+    about: "",
+    price:0, 
+    shipperName:"",
+    foto: "",
+    shipperId:0
   }
 
-  public editProduct:IProduct={
+  public editProduct:IProduct={ ///Todo: add edit about  
     productId:0,
     name:"",
-    price:0
+    about: "",
+    price:0,
+    shipperName:"",
+    foto: "",
+    shipperId:0
   }
 
   public kindId: number = 1;

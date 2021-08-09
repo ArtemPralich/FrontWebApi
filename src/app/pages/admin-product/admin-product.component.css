@@ -1,10 +1,7 @@
 .tableKindId{
     width: 3%;
 }
-.tableKindDelete{
-    width: 10%;
-}
-.tableKindEdit{
+.tableKindButton{
     width: 10%;
 }
 .tableKindName{
