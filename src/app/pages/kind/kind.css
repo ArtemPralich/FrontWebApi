@@ -7,8 +7,15 @@
   }
 
 .navs-items{
-    margin: 10px 30px;
+    width: 100%;
+    margin: 10px 0px;
     font-size: 15pt;
+}
+.nav-item{
+    margin: 0 0 5px 0;
+}
+.nav-item:hover{ 
+    background-color:rgb(195, 195, 195)
 }
 .kind-panel{
     min-height: 100%; 

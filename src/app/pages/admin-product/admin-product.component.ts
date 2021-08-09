@@ -74,7 +74,7 @@ export class AdminProductComponent implements OnInit {
     }, error => {
       alert("Get failed");
     });
-    //this.pagination.countAllPage = this.getProducts.countPage;
+    //this.pagination.countAllPage = this.getProducts.countPage;dsfsdf
   }
 
   ngOnInit(): void {

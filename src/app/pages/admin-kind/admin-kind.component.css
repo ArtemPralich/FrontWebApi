@@ -1,14 +1,15 @@
 .tableProductId{
     width: 3%;
 }
-.tableProductDelete{
-    width: 10%;
+.tableProductButton{
+    width: 5%;
 }
 .tableProductEdit{
-    width: 10%;
+    width: 5%;
 }
 .tableProductName{
-    width: 20%;
+    max-width: 20%;
+    overflow: hidden;
 }
 .tableProductAbout{
     width: auto;

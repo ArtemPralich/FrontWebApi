@@ -7,6 +7,9 @@
     vertical-align: top;
     background-color: rgb(240, 240, 240);   
 }
+.catalog-item:hover{
+    outline: 1px solid #65994C; 
+}
 .catalog-item-foto{
     width: 50%; 
     height:150px; 
@@ -19,4 +22,7 @@
     position: relative;
     margin: 15px 5%;   
     text-align: left;
+}
+.catalog-product{
+    min-height: 810px;
 }
