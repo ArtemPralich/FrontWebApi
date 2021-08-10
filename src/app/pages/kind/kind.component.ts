@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewChildren } from '@angular/core';
 import { IKind } from '../../interface/IKind';
 import { Observable } from "rxjs";
 import { KindService } from '../../service/KindService';
 import { OnInit } from '@angular/core';
 import { IGetAllKinds } from 'src/app/interface/IGetAllKinds';
 import { ActivatedRoute } from '@angular/router';
+import { ProductComponent } from '../products/products.component';
 
 @Component({
     selector: 'kind-app',
@@ -13,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class KindComponent implements OnInit{
+  
   public getKinds: IGetAllKinds = {
     countPage: 1,
     currentPage:1,
@@ -28,6 +30,7 @@ export class KindComponent implements OnInit{
     constructor(private kindService: KindService, private route: ActivatedRoute ) { }
     
     get(){
+     
       this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
         this.getKinds = res;
       });
