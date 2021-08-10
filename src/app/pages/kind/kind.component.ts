@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { KindService } from '../../service/KindService';
 import { OnInit } from '@angular/core';
 import { IGetAllKinds } from 'src/app/interface/IGetAllKinds';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'kind-app',
@@ -19,13 +20,13 @@ export class KindComponent implements OnInit{
   }
     Params = {
       searchTerm: "",
-      pageSize: 15,
+      pageSize: 150,
       pageNumber: 1,
     }
-
+    public kindId:number = 1 ;
     
-    constructor(private kindService: KindService) { }
-   
+    constructor(private kindService: KindService, private route: ActivatedRoute ) { }
+    
     get(){
       this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
         this.getKinds = res;

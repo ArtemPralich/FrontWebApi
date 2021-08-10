@@ -27,6 +27,7 @@ export class ProductComponent implements OnInit{
     }
      
     get(){    
+        
         this.route.params.subscribe(
             params => {
                 this.kindId = params['id'];

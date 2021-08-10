@@ -26,3 +26,15 @@
 .catalog-product{
     min-height: 810px;
 }
+.kind-scroll{
+    width:10% ;
+   /* scrollbar-color: #458245 #714826; */     
+
+    height: 50px;
+}::-webkit-scrollbar { width: 1px; height: 30px; background-color: rgb(201, 176, 176); }
+/* ::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #999;}
+::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #999;}
+::-webkit-resizer { background-color: #666;} */

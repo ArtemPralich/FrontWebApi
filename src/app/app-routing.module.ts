@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'kinds', component: KindComponent,
     children:[
       { path: ':id/products', component: ProductComponent,},
-      { path: ':kindId/products/:id', component: ProductComponent,},
+      
       //{ path: 'kinds/:id/',component: ProductComponent}
     ]
   
