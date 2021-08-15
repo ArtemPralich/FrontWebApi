@@ -1,17 +1,29 @@
-<form >
-    <p>
-        <label>
-            Username
-        </label>
-        <input id="username" type="text">
-    </p>
-    <p>
-        <label>
-            Password
-        </label>
-        <input id="password" type="password">
-    </p>
-    <input type="submit" id="submitLogin" value="Логин" (click)="this.loginService.login();">
-</form>
-<a href="/register">Register</a>
+<div class="div-login">
+    <div class="title-form-div">
+        <h4>Login</h4>
+    </div>
+    <div class="input-login-form">
+        <form  >
+            <p>
+                <label>
+                    Username
+                </label><br/>
+                <input class="form-control" id="username" type="text">
+            </p>
+            <p>
+                <label>
+                    Password
+                </label><br/>
+                <input class="form-control" id="password" type="password">
+            </p>
+            <div class="button-div-login">
+                <input  type="submit" class="btn btn-secondary button-login" id="submitLogin" value="Логин" (click)="this.loginService.login();">
+            </div>
+        </form>
+
+        <div class="button-div-login">
+            <a href="/register" >Register</a>
+        </div>
+    </div>
+</div>
 
