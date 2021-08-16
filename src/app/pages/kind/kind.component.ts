@@ -27,7 +27,9 @@ export class KindComponent implements OnInit{
     }
     public kindId:number = 1 ;
     
-    constructor(private kindService: KindService, private route: ActivatedRoute ) { }
+    constructor(private kindService: KindService, private route: ActivatedRoute ) {
+      
+     }
     
     get(){
      
@@ -37,6 +39,11 @@ export class KindComponent implements OnInit{
     }
 
     ngOnInit(){
+      this.route.params.subscribe(
+        params => {
+            this.kindId = params["id"];
+            console.log(params["id"])
+        });
       this.get();
     }
   }

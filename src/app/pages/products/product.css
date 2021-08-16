@@ -1,6 +1,7 @@
 .catalog-item{ /* Ширина */
     min-width: 300px ;
-    width: 350px;;
+    max-height: 186px;
+    width: 350px;
     margin: 0 2% 15px 0; /* Отступы */
     text-align: center; /* Выравнивание по центру */
     display: inline-block; /* Строчно-блочный элемент */

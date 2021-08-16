@@ -15,12 +15,34 @@
         <a class="textItems" href="/about">About</a><br/>
     </div>
     <div class="menuItem">
-        <a class="textItems" *ngIf="this.isLoggedIn() else logout" href="/login">Login</a><br/>
+        <a class="textItems" *ngIf="this.isLoggedIn() " href="/login">Login</a><br/>
     </div>
-    <ng-template #logout>
+    <!-- <ng-template #logout>
         <div class="menuItem">
             <a *ngIf="!this.isLoggedIn()" href="/logout" (click)="this.loginService.logout();" >Logout</a><br/>
         </div>
-    </ng-template>    
+    </ng-template>    -->
+    
+        
+    <div class="menuItem1 dropdown">
+        <a class="dropdown-toggle" id="navbarDropdownMenuAccount" *ngIf="!this.isLoggedIn()" href="/user/1">
+            YourAccount
+        </a>
+        <div class="dropdown-menu account-menu" aria-labelledby="navbarDropdownMenuAccount">
+            <p class="account-menu-items">
+                <a class="account-menu-link" href="/user/1">Account</a>
+            </p>
+            <p class="account-menu-items">
+                <a class="account-menu-link" href="/user/1/setting">Setting</a>
+            </p>
+            <hr class="account-menu-line"/>
+            <p class="account-menu-items">
+                <a class="account-menu-link" (click)="this.loginService.logout();">Logout</a>
+            </p>
+        </div>
+    </div>
+                
+        
 </div>
+
 

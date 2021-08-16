@@ -13,9 +13,11 @@ import { AdminKindComponent } from './pages/admin-kind/admin-kind.component';
 import { AdminShipperComponent } from './pages/admin-shipper/admin-shipper.component';
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
+import { UserComponent } from './pages/user/user.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'user/:id', component: UserComponent},
   { path: 'kinds', component: KindComponent,
     children:[
       { path: ':id/products', component: ProductComponent,},

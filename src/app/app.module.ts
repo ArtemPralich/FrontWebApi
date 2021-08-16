@@ -35,6 +35,7 @@ import { FooterComponent } from './sections/footer/footer.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
 import { PaginationService } from './service/PaginationService';
 import { ParamsProductService } from './service/ParamsProductService';
+import { UserComponent } from './pages/user/user.component';
 
 
 
@@ -57,6 +58,7 @@ import { ParamsProductService } from './service/ParamsProductService';
     FooterComponent,
     PaginationComponent,
     AdminProductComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

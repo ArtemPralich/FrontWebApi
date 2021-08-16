@@ -7,14 +7,60 @@
     float: left;
     margin-left: 5%;
 }
+.menuItem1{
+    
+    float: right;
+    margin-right: 5%;
+}
 .menuHub{
     width: 100%;
     height: 80px;
     background-color: rgb(59, 48, 48);
     color: rgb(165, 65, 65);
     line-height: 80px;
-    
 }
 .textItem{
     font-size: 110%;
+}
+nav.navbar .dropdown:hover > .dropdown-menu {
+    display: block; 
+} 
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown-item:hover>.dropdown-menu {
+    display: block;
+}
+ul li{
+  list-style-type:none;
+  display: inline;
+}
+.navbar-nav .nav-link{
+    display:inline-block;
+}
+     
+.ml-auto {
+    display:inline-block!important;
+}
+  
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+.account-menu{
+    margin-top: -15px;
+    margin-left: -10%;
+    background-color: rgb(168, 162, 162);
+}
+.account-menu-items{
+    margin-left: 5%;
+    width: auto;
+    height: 10px;
+    line-height: 20px;
+}
+.account-menu-link{
+    color: white;
+}
+.account-menu-line{
+    color: white;
+    margin-bottom: 5px;
 }
