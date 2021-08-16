@@ -18,7 +18,6 @@ export class AdminComponent implements OnInit {
   public strAction: string ="";
   public shippers: IShipper[] = []
   public kinds: IKind[] = []
-  //public kind: IKind;
   constructor(private shipperService: ShipperService, private kindService: KindService, private router : Router) { }
 
   change(str: string){

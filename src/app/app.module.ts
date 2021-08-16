@@ -36,6 +36,9 @@ import { PaginationComponent } from './sections/pagination/pagination.component'
 import { PaginationService } from './service/PaginationService';
 import { ParamsProductService } from './service/ParamsProductService';
 import { UserComponent } from './pages/user/user.component';
+import { BasketComponent } from './pages/basket/basket.component';
+import { BasketService } from './service/BasketService';
+import { AccountComponent } from './pages/account/account.component';
 
 
 
@@ -59,6 +62,8 @@ import { UserComponent } from './pages/user/user.component';
     PaginationComponent,
     AdminProductComponent,
     UserComponent,
+    BasketComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,10 +71,11 @@ import { UserComponent } from './pages/user/user.component';
     FormsModule,
     AppRoutingModule,
     NgbModule,
+    RouterModule
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
-  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, ParamsProductService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, ParamsProductService, BasketService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
