@@ -1,0 +1,53 @@
+<div class="div-basket">
+    <table class="table table-hover">
+        <caption>Product basket</caption>
+        <tbody>
+            <tr *ngFor="let product of myProducts">
+                <td class="itemBasketToFoto">
+                    <div class="basket-item-foto">
+                        <img width="100%" height="100%" src="{{product.returnProduct.foto}}"  alt="foto">
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        {{product.returnProduct.name}}
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        {{product.returnProduct.about}}
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        shipper {{product.returnProduct.shipperName}}
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        {{product.returnProduct.price}}
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        <input type="number" style="width: 60px;"  min="0" class="form-control" [(ngModel)]="this.product.count" (change)="get()"/>
+                    </div>
+                </td>
+                <td class="itemBasket">
+                    <div class="itemBasketDiv">
+                        {{product.returnProduct.price * this.product.count}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="div-basket-info" >
+    <div>
+        <h4 class="div-basket-name-info">Information</h4>
+    </div>
+    <div>
+            <h6>Total price:{{this.totalPrice}}</h6> 
+            <h6>Total count:{{this.totalCount}}</h6> 
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.div-basket{
+    width: 70%;
+    margin-left: 5%;
+    float: left;
+}
+.basket-item-foto{
+    min-width: 200px;
+    min-height: 150px;
+    width: 200px;
+    height: 150px;
+}
+.itemBasketToFoto{
+    width: 200px;
+}
+.itemBasket{
+    overflow: hidden;
+    max-height: 160px;
+    width: 15%;
+    vertical-align: auto;
+}
+.itemBasketDiv{
+    margin-top: 10%;
+    max-height: 130px;
+    overflow: hidden;
+}
+.div-basket-info{
+    margin-top: 10px;
+    background-color: green;
+    height: 200px;
+    width: 20%;
+    margin-left: 2%;
+    float: left;
+}
+.div-basket-name-info{
+    margin-top: 10px;
+    text-align: center;
+}

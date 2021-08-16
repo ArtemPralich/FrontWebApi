@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { IGetProductBasket } from "../interface/IGetProductBasket";
 import { IKind } from "../interface/IKind"; 
 
 
@@ -19,8 +20,7 @@ export class BasketService {
     logout(){
       localStorage.removeItem('jwt');
     }
-    getBasket(){
-      this.http.get<string>(`https://localhost:5001/api/ProductBasket`,{headers: this.myHeaders}).subscribe(res => {
-        console.log(res)});
+    getBasket():Observable<IGetProductBasket[]>{
+      return this.http.get<IGetProductBasket[]>(`https://localhost:5001/api/ProductBasket`, {headers: this.myHeaders});
     }
 }

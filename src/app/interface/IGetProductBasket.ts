@@ -1,6 +1,6 @@
 import { IProduct } from "./IProduct";
 
-export interface IGetAllProduct{
+export interface IGetProductBasket{
     count: number;
-    productsDto: IProduct;
+    returnProduct: IProduct;
 }
