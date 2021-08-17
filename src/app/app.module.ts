@@ -40,7 +40,8 @@ import { BasketComponent } from './pages/basket/basket.component';
 import { BasketService } from './service/BasketService';
 import { AccountComponent } from './pages/account/account.component';
 
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthenticationInterceptor } from './interceptor/AuthenticationInterceptor';
 
 
 @NgModule({
@@ -75,7 +76,16 @@ import { AccountComponent } from './pages/account/account.component';
     //BrowserAnimationsModule,
     //RegisterModule,
   ],
-  providers: [KindService, ShipperService, ProductService, LoginService, PaginationService, ParamsProductService, BasketService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    KindService, 
+    ShipperService, 
+    ProductService, 
+    LoginService, 
+    PaginationService, 
+    ParamsProductService, 
+    BasketService, 
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true,}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

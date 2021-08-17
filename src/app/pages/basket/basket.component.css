@@ -25,8 +25,9 @@
 }
 .div-basket-info{
     margin-top: 10px;
-    background-color: green;
-    height: 200px;
+    background-color: rgb(238, 234, 234);
+    height: auto;
+    min-width: 300px;
     width: 20%;
     margin-left: 2%;
     float: left;
@@ -35,3 +36,29 @@
     margin-top: 10px;
     text-align: center;
 }
+.info-item{
+    margin-left: 5%;
+    float: left;
+    width: 40%;
+}
+.div-form{
+    width: 90%;
+    margin: 20px 5%;
+}
+.form-input{
+    margin-bottom: 10px;
+}
+.itemBasket1{
+    width: 2%;
+    height: 20px;
+}
+.xclass{
+    border: 1px rgb(156, 156, 156) solid;
+    color: blanchedalmond;
+    background-color: rgb(136, 136, 136);
+    
+
+    width: 23px;
+    text-align: center;
+}
+

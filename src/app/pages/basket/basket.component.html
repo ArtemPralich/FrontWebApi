@@ -30,13 +30,18 @@
                 </td>
                 <td class="itemBasket">
                     <div class="itemBasketDiv">
-                        <input type="number" style="width: 60px;"  min="0" class="form-control" [(ngModel)]="this.product.count" />
+                        <input type="number" style="width: 60px;"  min="0" class="form-control" [(ngModel)]="this.product.count" (change)="add(product.returnProduct.productId, this.product.count)" />
                     </div>
                 </td>
                 <td class="itemBasket">
                     <div class="itemBasketDiv">
-                        {{product.returnProduct.price * this.product.count}}
+                        {{this.roundPrice(product.returnProduct.price * this.product.count)}}
                     </div>
+                </td>
+                <td class="itemBasket1">  
+                        <div class="xclass" (click)="delete(product.returnProduct.productId)">
+                            x
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -47,7 +52,26 @@
         <h4 class="div-basket-name-info">Information</h4>
     </div>
     <div>
+        <div class="info-item">
             <h6>Total price:{{this.totalPrice}}</h6> 
+        </div>
+        <div class="info-item">
             <h6>Total count:{{this.totalCount}}</h6> 
+        </div> 
+    </div>
+    <div class="div-form">
+        <label>
+            Phone Number
+        </label>
+        <input type="text" class="form-control form-input" />
+        <label>
+            Email
+        </label>
+        <input type="text" class="form-control form-input" />
+        <label>
+            Address
+        </label>
+        <input type="text" class="form-control form-input" />
+        <button style="width: 100%; margin-top: 10px;" type="button" class="btn btn-secondary"  data-dismiss="modal" (click)="get()">Enter</button>
     </div>
 </div>

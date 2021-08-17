@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IGetAllProduct } from 'src/app/interface/IGetAllProduct';
 import { PaginationService } from 'src/app/service/PaginationService';
 import { ParamsProductService } from 'src/app/service/ParamsProductService';
+import { BasketService } from 'src/app/service/BasketService';
 
 @Component({
     selector: 'product-app',
@@ -23,11 +24,10 @@ export class ProductComponent implements OnInit{
     }
     public kindId: number = 1;
 
-    constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService) {
+    constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService, public basket:BasketService) {
     }
      
-    get(){    
-        
+    get(){        
         this.route.params.subscribe(
             params => {
                 this.kindId = params['id'];
@@ -39,7 +39,13 @@ export class ProductComponent implements OnInit{
             this.pagination.countAllPage = this.getProducts.countPage;
         });
     }
-    
+    addBasket(id:number, count:number){
+        this.basket.addProduct(id,count).subscribe(res =>{
+            alert("Success")
+        },error=>{
+            alert("nononnono")
+        })
+    }
     ngOnInit(){
         this.get();
     }

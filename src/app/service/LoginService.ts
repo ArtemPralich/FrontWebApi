@@ -12,6 +12,7 @@ export class LoginService {
     constructor(private http:HttpClient, private router: Router){}
     logout(){
       localStorage.removeItem('jwt');
+      this.router.navigate(["/login"]);
     }
     login(){
       const myHeaders = new HttpHeaders({

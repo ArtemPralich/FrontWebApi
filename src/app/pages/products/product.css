@@ -1,6 +1,6 @@
 .catalog-item{ /* Ширина */
     min-width: 300px ;
-    max-height: 186px;
+    max-height: 175px;
     width: 350px;
     margin: 0 2% 15px 0; /* Отступы */
     text-align: center; /* Выравнивание по центру */
@@ -14,14 +14,15 @@
 .catalog-item-foto{
     width: 50%; 
     height:150px; 
-    margin: 15px 5%;  
+    margin: 15px 0% 10px 3%;  
     float:left;
     background-color: rgb(192, 176, 176);
 }
 .catalog-item-text{
-    
+    margin: 0 6%;   
+    width: 35%;
+    float:right;
     position: relative;
-    margin: 15px 5%;   
     text-align: left;
 }
 .catalog-product{
