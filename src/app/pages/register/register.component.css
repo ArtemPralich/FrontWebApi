@@ -26,3 +26,16 @@
 .button-login{
     justify-content: center;
 }
+
+input::-webkit-outer-spin-button,
+/* убрал стрелки в input number */
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.validate-text{
+    margin-bottom: 10px;
+}
+.form-item{
+    margin-top:  10px;
+}

@@ -3,46 +3,69 @@
         <h4>Register</h4>
     </div>
     <div class="input-login-form">
-        <form >
-            <p>
+        <form class="was-validated">            
+            <div class="form-item">
                 <label>
                     First name
                 </label><br/>
-                <input class="form-control" id="firstName" name="firstName" [(ngModel)]="this.user.FirstName">
-            </p>
-            <p>
+                <input class="form-control" id="firstName" name="firstName" [(ngModel)]="this.user.FirstName" required>
+                <div class="invalid-feedback validate-text">
+                    Please provide a valid zip.
+                </div>
+            </div>
+            <div class="form-item">
                 <label>
                     Last name
                 </label><br/>
-                <input class="form-control" id="lastName" name="lastName" [(ngModel)]="this.user.LastName">
-            </p>
-            <p>
+                <input class="form-control" id="lastName" name="lastName" [(ngModel)]="this.user.LastName" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+            </div>
+            <div class="form-item">
                 <label>
                     Username
                 </label><br/>
-                <input class="form-control" id="userName" name="userName" [(ngModel)]="this.user.UserName">
-            </p>
-            <p>
+                <input class="form-control" id="userName" name="userName" [(ngModel)]="this.user.UserName" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+            </div>
+            <div class="form-item">
                 <label>
                     Email
                 </label><br/>
-                <input class="form-control" id="email" name="email" [(ngModel)]="this.user.Email">
-            </p>
-            <p>
+                <input class="form-control" id="email" type="email" name="email" [(ngModel)]="this.user.Email"   required>
+                <!-- pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" > -->
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
+            </div>
+            <div class="form-item">
                 <label>
                     PhoneNumber
                 </label><br/>
-                <input class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="this.user.PhoneNumber">
-            </p>
-            <p>
+                <input class="form-control" id="phoneNumber" type="number" name="phoneNumber" min="1000000" [(ngModel)]="this.user.PhoneNumber" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+            </div>
+            <div class="form-item">
                 <label>
                     Password
                 </label><br/>
-                <input class="form-control" id="password" type="password" name="password" [(ngModel)]="this.user.Password">
-            </p>
-            <div class="button-div-login">
+                <input class="form-control" id="password" type="password" name="password" [(ngModel)]="this.user.Password" minlength="10" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                  </div>
+            </div>
+            <div class="button-div-login form-item">
                 <input class="btn btn-secondary button-login" type="submit" id="submitLogin" value="Register" (click)="register();">
             </div>
         </form>
     </div>
 </div>
+
+
+
+
