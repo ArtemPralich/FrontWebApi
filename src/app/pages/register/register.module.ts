@@ -12,7 +12,7 @@ import { RegisterComponent } from './register.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class RegisterModule { 

@@ -11,8 +11,9 @@ export class AuthenticationInterceptor implements HttpInterceptor {
         if(localStorage.getItem('jwt') !== null){
             this.token = localStorage.getItem("jwt");
             req = req.clone({
-                headers: req.headers.set('Authorization', `Bearer ${this.token}`)
+                headers: req.headers.set('Authorization', `Bearer ${this.token}`),
               });
+             
         }
         //req.headers.append('Authorization', `Bearer ${this.token}`)
         return next.handle(req);

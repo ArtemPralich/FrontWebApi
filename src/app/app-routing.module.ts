@@ -23,10 +23,10 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'user', component: UserComponent, 
     children:[
-      {path: 'account', component: AccountComponent,  canActivate: [!AuthGuard]},
-      {path: 'basket', component: BasketComponent, canActivate: [!AuthGuard]},
-      {path: 'setting', component: BasketComponent, canActivate: [!AuthGuard]}
-    ]
+      {path: 'account', component: AccountComponent,},
+      {path: 'basket', component: BasketComponent, },
+      {path: 'setting', component: BasketComponent, }
+    ],
   },
   { path: 'kinds', component: KindComponent,
     children:[
