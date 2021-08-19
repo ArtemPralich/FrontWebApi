@@ -24,7 +24,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterModule } from './pages/register/register.module';
-import { LoginService } from './service/LoginService';
+import { AuthService } from './service/AuthService';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -42,6 +42,7 @@ import { AccountComponent } from './pages/account/account.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationInterceptor } from './interceptor/AuthenticationInterceptor';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -77,10 +78,11 @@ import { AuthenticationInterceptor } from './interceptor/AuthenticationIntercept
     //RegisterModule,
   ],
   providers: [
+    AuthGuard,
     KindService, 
     ShipperService, 
     ProductService, 
-    LoginService, 
+    AuthService, 
     PaginationService, 
     ParamsProductService, 
     BasketService, 

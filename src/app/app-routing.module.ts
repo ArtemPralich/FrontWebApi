@@ -16,13 +16,16 @@ import { PaginationComponent } from './sections/pagination/pagination.component'
 import { UserComponent } from './pages/user/user.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { AccountComponent } from './pages/account/account.component';
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   { path: 'user', component: UserComponent, 
     children:[
-      {path: 'account', component: AccountComponent,},
-      {path: 'basket', component: BasketComponent,}
+      {path: 'account', component: AccountComponent,  canActivate: [!AuthGuard]},
+      {path: 'basket', component: BasketComponent, canActivate: [!AuthGuard]},
+      {path: 'setting', component: BasketComponent, canActivate: [!AuthGuard]}
     ]
   },
   { path: 'kinds', component: KindComponent,
@@ -43,8 +46,8 @@ const routes: Routes = [
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'logout', component: LoginComponent},
   { path: '**', component: NotFoundComponent},
 ];

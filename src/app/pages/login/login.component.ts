@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router} from '@angular/router';
-import { LoginService } from 'src/app/service/LoginService';
+import { AuthService } from 'src/app/service/AuthService';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit{
     tokenKey:string = "accessToken";
     tokenStr : string = "" ; 
     
-    constructor(private http:HttpClient, private router: Router, public loginService: LoginService){
+    constructor(private http:HttpClient, private router: Router, public auth: AuthService){
         
     }    
     

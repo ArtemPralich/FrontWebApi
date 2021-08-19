@@ -6,15 +6,23 @@ import { IKind } from "../interface/IKind";
 
 
 @Injectable()
-export class LoginService {
+export class AuthService {
     public pathBase: string = "https://localhost:5001/kinds"
 
     constructor(private http:HttpClient, private router: Router){}
+
+    resultStatus:any;
+
+    authenticated(): boolean{
+      return (localStorage.getItem("jwt") !== null)
+    }
+
     logout(){
       localStorage.removeItem('jwt');
       this.router.navigate(["/login"]);
     }
     login(){
+      if(this.authenticated()) return; 
       const myHeaders = new HttpHeaders({
           "Content-Type": "application/json"
         });
@@ -32,5 +40,19 @@ export class LoginService {
           localStorage.setItem("jwt", token);
           this.router.navigate(["/"]);
       } );
-  }   
+    }
+    register(user: any){
+      //if(this.authenticated()) return; 
+      
+      this.http.post<string>(`https://localhost:5001/Authentication`, user , { observe: 'response' }).subscribe(response => {
+        this.resultStatus = response.status;
+        const token = (<any>response).token; 
+        localStorage.setItem("jwt", token);
+        this.router.navigate(["/"]);
+      }, error =>{
+        alert(error)
+        console.log(error);
+
+      });
+    }     
 }

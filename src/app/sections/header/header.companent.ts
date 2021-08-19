@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { LoginService } from "src/app/service/LoginService";
+import { AuthService } from "src/app/service/AuthService";
 
 @Component({
     selector: 'header-app',
@@ -10,7 +10,7 @@ import { LoginService } from "src/app/service/LoginService";
     styleUrls: ['/header.css']
   })
   export class HeaderCompanent{
-    constructor(public loginService : LoginService, public router : Router ){}
+    constructor(public authService : AuthService, public router : Router ){}
     isLoggedin = true;
     
     isLoggedIn(){
