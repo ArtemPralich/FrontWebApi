@@ -3,20 +3,27 @@
         <h4>Login</h4>
     </div>
     <div class="input-login-form">
-        <form  >
-            <p>
+        <form  class="was-validated">
+            <div  class="form-item">
                 <label>
                     Username
                 </label><br/>
-                <input class="form-control" id="username" type="text">
-            </p>
-            <p>
+                <input class="form-control" id="username" type="text" required>
+                <div class="invalid-feedback validate-text">    
+                    This UserName is invalid.
+                </div>
+            </div>
+            <div  class="form-item">
                 <label>
                     Password
                 </label><br/>
-                <input class="form-control" id="password" type="password">
-            </p>
-            <div class="button-div-login">
+                <input class="form-control" id="password" type="password" minlength="10" required>
+                <div class="invalid-feedback">
+                    This password is invalid. 
+                    The password must be at least 10 characters long.
+                  </div>
+            </div>
+            <div class="button-div-login form-item">
                 <input  type="submit" class="btn btn-secondary button-login" id="submitLogin" value="Login" (click)="this.loginService.login();">
             </div>
         </form>
