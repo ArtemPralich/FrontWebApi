@@ -39,3 +39,8 @@ input::-webkit-inner-spin-button {
 .form-item{
     margin-top:  10px;
 }
+
+.validItem{
+    font-size: 1em;
+    color: #dc3545;
+}

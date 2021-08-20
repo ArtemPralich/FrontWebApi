@@ -21,20 +21,25 @@ export class RegisterComponent implements OnInit {
     PhoneNumber: "",
     Roles: ["User"]
   };
+  public statusAuth : boolean = true;
   constructor(private http:HttpClient, private router: Router, public auth: AuthService) { }
-  // public register(){
-  //   this.login.register(this.user);
-    
-    
-  //   this.http.post<string>(`https://localhost:5001/Authentication`, this.user , { observe: 'response' } ).subscribe(response => {
-  //     this.resultStatus = response.status;
-  //     const token = (<any>response).token; 
-  //     localStorage.setItem("jwt", token);
-  //     this.router.navigate(["/"]);
-  //   }, error =>{
-  //     //console.log(error);
-  //   });
-  // }  
+
+  register(){
+    this.auth.register(this.user).subscribe(response => {  
+      const token = (<any>response).body.token; 
+      localStorage.setItem("jwt", token);
+      const header = response.headers.get('roles');
+        if(header !== null){
+          localStorage.setItem("role", header);
+        } 
+      localStorage.setItem("date",`${(new Date()).getTime()}`);
+      this.router.navigate(["/"]);
+    }, error =>{
+      this.statusAuth = false;
+      alert(error)
+      console.log(error);});
+  }
+   
   ngOnInit(): void {
   }
 

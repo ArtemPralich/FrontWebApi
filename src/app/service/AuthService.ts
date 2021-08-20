@@ -52,25 +52,9 @@ export class AuthService {
           }), { headers:myHeaders,observe: 'response'} );
 
     }
-    register(user: any){
+    register(user: any):Observable<HttpResponse<string>>{
       //if(this.authenticated()) return; 
-      this.http.post<string>(`https://localhost:5001/Authentication`, user , { observe: 'response'}).subscribe(response => {
-        
-        const token = (<any>response).body.token; 
-        localStorage.setItem("jwt", token);
-
-        const header = response.headers.get('roles');
-          if(header !== null){
-            localStorage.setItem("role", header);
-          }
-        
-        localStorage.setItem("date",`${(new Date()).getTime()}`);
-
-        this.router.navigate(["/"]);
-      }, error =>{
-        alert(error)
-        console.log(error);
-
-      });
-    }     
+      return this.http.post<string>(`https://localhost:5001/Authentication`, user , { observe: 'response'});
+      
+    }    
 }

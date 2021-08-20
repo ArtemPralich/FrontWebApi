@@ -3,7 +3,12 @@
         <h4>Register</h4>
     </div>
     <div class="input-login-form">
-        <form class="was-validated">            
+        <form class="was-validated">    
+            
+            <div class="validItem" *ngIf="!this.statusAuth">  
+                <span class="validItem">This username is taken.</span>                      
+            </div>
+
             <div class="form-item">
                 <label>
                     First name
@@ -54,13 +59,13 @@
                 <label>
                     Password
                 </label><br/>
-                <input class="form-control" id="password" type="password" name="password" [(ngModel)]="this.user.Password" minlength="10" required>
+                <input class="form-control" id="password" type="password" name="password" [(ngModel)]="this.user.Password" minlength="10"  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{10,32}$" required>
                 <div class="invalid-feedback">
                     Password must contain 10-32 characters, at least 1 number and 1 letter. Must not contain special characters.
                   </div>
             </div>
             <div class="button-div-login form-item">
-                <input class="btn btn-secondary button-login" type="submit" id="submitLogin" value="Register" (click)="this.auth.register(this.user);">
+                <input class="btn btn-secondary button-login" type="submit" id="submitLogin" value="Register" (click)="this.register();">
             </div>
         </form>
     </div>
