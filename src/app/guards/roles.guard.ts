@@ -3,12 +3,12 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/ro
 
 import { AuthService } from "../service/AuthService";
 
-@Injectable()
-export class AdminGuard {
+@Injectable() 
+export class RolesGuard {
     constructor(private router: Router, private auth : AuthService) { }
 
     canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): boolean {
-        if (this.auth.authenticated()) {
+        if (this.auth.roles() != '["Administrator"]' && this.auth.roles() != '["Shipper"]') {/// todo "["fsdf"]" => "fsdf"
             this.router.navigateByUrl("/");
             return false;
         }

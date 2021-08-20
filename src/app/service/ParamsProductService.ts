@@ -26,5 +26,4 @@ export class ParamsProductService {
     returnParams():any{
         return this.Params;
     }
-    
 }

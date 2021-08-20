@@ -29,8 +29,7 @@
     max-height: 800px;
 }
 ::-webkit-scrollbar{ 
-    width: 3px; 
-    height: 30px; 
+    width: 3px;  
     background-color: rgb(201, 201, 201); 
 }
 ::-webkit-scrollbar-thumb {

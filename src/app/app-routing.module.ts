@@ -17,6 +17,7 @@ import { UserComponent } from './pages/user/user.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { AccountComponent } from './pages/account/account.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RolesGuard } from './guards/roles.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
       {path: 'account', component: AccountComponent,},
       {path: 'basket', component: BasketComponent, },
       {path: 'setting', component: BasketComponent, }
-    ],
+    ], canActivate: [AuthGuard]
   },
   { path: 'kinds', component: KindComponent,
     children:[
@@ -34,7 +35,7 @@ const routes: Routes = [
       
       //{ path: 'kinds/:id/',component: ProductComponent}
     ]
-  
+
   },
   { path: 'admin', component: AdminComponent,
     children: [
@@ -42,12 +43,12 @@ const routes: Routes = [
       { path: 'shippers', component: AdminShipperComponent,},
       { path: 'products', component: AdminProductComponent,},
       { path: 'kinds/:id/products', component: AdminProductComponent,},
-    ]
+    ], canActivate: [RolesGuard]
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
+  { path: 'register', component: RegisterComponent,},
+  { path: 'login', component: LoginComponent, },
   { path: 'logout', component: LoginComponent},
   { path: '**', component: NotFoundComponent},
 ];

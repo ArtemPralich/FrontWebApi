@@ -43,6 +43,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationInterceptor } from './interceptor/AuthenticationInterceptor';
 import { AuthGuard } from './guards/auth.guard';
+import { RolesGuard } from './guards/roles.guard';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { AuthGuard } from './guards/auth.guard';
     //RegisterModule,
   ],
   providers: [
+    RolesGuard,
     AuthGuard,
     KindService, 
     ShipperService, 

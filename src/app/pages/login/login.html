@@ -4,11 +4,14 @@
     </div>
     <div class="input-login-form">
         <form  class="was-validated">
+            <div class="validItem" *ngIf="!this.statusAuth">  
+                <span class="validItem">Invalid username or password.</span>                      
+            </div>
             <div  class="form-item">
                 <label>
                     Username
                 </label><br/>
-                <input class="form-control" id="username" type="text" required>
+                <input class="form-control" id="username" type="text"  required>
                 <div class="invalid-feedback validate-text">    
                     This UserName is invalid.
                 </div>
@@ -17,16 +20,19 @@
                 <label>
                     Password
                 </label><br/>
-                <input class="form-control" id="password" type="password" minlength="10" required>
+                <input class="form-control" id="password" type="password" minlength="10" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{10,32}$" required>
                 <div class="invalid-feedback">
-                    This password is invalid. 
-                    The password must be at least 10 characters long.
+                    <!-- This password is invalid.  -->
+                    <!-- The password must be at least 10 characters long. -->
+                    Password must contain 10-32 characters, at least 1 number and 1 letter. Must not contain special characters.
                   </div>
             </div>
+            
             <div class="button-div-login form-item">
-                <input  type="submit" class="btn btn-secondary button-login" id="submitLogin" value="Login" (click)="this.auth.login();">
+                <input  type="submit" class="btn btn-secondary button-login" id="submitLogin" value="Login" (click)="this.login();">
             </div>
         </form>
+        
 
         <div class="button-div-login">
             <a href="/register" >Register</a>

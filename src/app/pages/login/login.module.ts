@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/service/AuthService';
     LoginComponent
   ],
   imports: [
+
     CommonModule,
     FormsModule,
     ReactiveFormsModule
@@ -20,5 +21,4 @@ import { AuthService } from 'src/app/service/AuthService';
 })
 export class LoginModule { 
 
-  
 }

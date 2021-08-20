@@ -11,5 +11,4 @@ export class PaginationComponent implements OnInit {
   constructor(public pagination : PaginationService) { }
   ngOnInit(): void {
   }
-
 }

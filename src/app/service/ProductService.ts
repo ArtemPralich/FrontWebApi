@@ -12,7 +12,7 @@ export class ProductService {
     }
 
     public ReturnAllProducts(kindId:number, params:any):Observable<IGetAllProduct> {
-      return this.http.get<IGetAllProduct>(`${this.pathBase}`+ `${kindId}` + "/products");
+      return this.http.get<IGetAllProduct>(`${this.pathBase}`+ `${kindId}` + "/products", {params});
       }
     public CreateProduct(kindId:number, product : IProduct):Observable<IProduct> {
       return this.http.post<IProduct>(`${this.pathBase}`+ `${kindId}` + "/products", product);

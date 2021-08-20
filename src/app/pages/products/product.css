@@ -40,3 +40,17 @@
 ::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
 ::-webkit-scrollbar-corner { background-color: #999;}
 ::-webkit-resizer { background-color: #666;} */
+.plusclass{
+    width:20%; 
+    cursor: pointer; 
+    float:left; 
+    border: 1px rgb(122, 122, 122) solid; 
+    text-align: center; 
+    background-color: rgb(128, 128, 128); 
+    color: azure;
+}
+
+.plusclass:hover{
+    background-color: rgb(99, 99, 99); 
+}
+

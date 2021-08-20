@@ -1,14 +1,16 @@
 import { Observable } from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
+import { AuthService } from '../service/AuthService';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
     public token : any; // = localStorage.getItem("jwt");    
-    constructor(){
+    constructor(private auth: AuthService){
     }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if(localStorage.getItem('jwt') !== null){
+            this.auth.checkToken();
             this.token = localStorage.getItem("jwt");
             req = req.clone({
                 headers: req.headers.set('Authorization', `Bearer ${this.token}`),

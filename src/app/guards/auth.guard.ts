@@ -8,8 +8,8 @@ export class AuthGuard {
     constructor(private router: Router, private auth : AuthService) { }
 
     canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): boolean {
-        if (this.auth.authenticated()) {
-            this.router.navigateByUrl("/");
+        if (!this.auth.authenticated()) {
+            this.router.navigateByUrl("/login");
             return false;
         }
         return true;

@@ -18,7 +18,7 @@ export class BasketService {
     constructor(private http:HttpClient, private router: Router){
         this.token = localStorage.getItem("jwt");
         this.myHeaders = new HttpHeaders({
-        "Authorization": "Bearer " + this.token
+        "Authorization": `Bearer ${this.token}`
       });
     }
     
