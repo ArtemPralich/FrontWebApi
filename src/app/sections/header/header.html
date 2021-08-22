@@ -3,19 +3,19 @@
         <h4 class="logo">LOGO</h4>
     </div>
     <div class="menuItem">
-        <a class=" textItems" href="">Home</a><br/>
+        <a class=" textItems" routerLink="">Home</a><br/>
     </div>
     <div class="menuItem">
-        <a class="textItems" href="/kinds">Kind</a><br/>
+        <a class="textItems" routerLink="/kinds">Kind</a><br/>
     </div>
     <div class="menuItem">
-        <a class="textItems" href="/shippers">Shipper</a><br/>
+        <a class="textItems" routerLink="/shippers">Shipper</a><br/>
     </div>
     <div class="menuItem">
-        <a class="textItems" href="/about">About</a><br/>
+        <a class="textItems" routerLink="/about">About</a><br/>
     </div>
     <div class="menuItem">
-        <a class="textItems" *ngIf="this.isLoggedIn() " href="/login">Login</a><br/>
+        <a class="textItems" *ngIf="this.isLoggedIn() " routerLink="/login">Login</a><br/>
     </div>
     <!-- <ng-template #logout>
         <div class="menuItem">
@@ -30,13 +30,13 @@
         </a>
         <div class="dropdown-menu account-menu" aria-labelledby="navbarDropdownMenuAccount">
             <p class="account-menu-items">
-                <a class="account-menu-link" href="/user/account">Account</a>
+                <a class="account-menu-link" routerLink="/user/account">Account</a>
             </p>
             <p class="account-menu-items">
-                <a class="account-menu-link" href="/user/basket">Basket</a>
+                <a class="account-menu-link" routerLink="/user/basket">Basket</a>
             </p>
             <p class="account-menu-items">
-                <a class="account-menu-link" href="/user/setting">Setting</a>
+                <a class="account-menu-link" routerLink="/user/setting">Setting</a>
             </p>
             <hr class="account-menu-line"/>
             <p class="account-menu-items">

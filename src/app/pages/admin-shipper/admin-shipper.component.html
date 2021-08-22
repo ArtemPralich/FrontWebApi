@@ -18,10 +18,54 @@
                     {{shipper.name}}
                 </td>
                 <td>
-                    del
+                    <button type="button" class="btn btn-dark"  >Delete</button>
                 </td>
                 <td>
-                    Edit
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit">Edit</button>
+
+                <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Edit product</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <p>
+                                <label>Name</label>
+                                <input type="text" size="10" class="form-control" >
+                            </p>
+                            <p>
+                                <label>Price</label>
+                                <input type="number" size="10" class="form-control" >
+                            </p>
+                            <p>
+                                <label>About</label>
+                                <textarea type="text" size="10" class="form-control"></textarea>
+                            </p>
+                            <p>
+                                <label>Foto</label>
+                                <input type="text" size="10" class="form-control">
+                            </p>
+                            <p>
+                                <label>ShipperId</label>
+                                <input type="number" size="10" class="form-control" >
+                            </p>
+                            <p>
+                                <label>KindId</label>
+                                <input type="number" size="10" class="form-control">
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal" >Add </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
                 </td>
             </tr>
         </tbody>

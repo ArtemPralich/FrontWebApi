@@ -11,26 +11,22 @@
                     <div>
                         <li class="nav-item" *ngFor="let kind of getKinds.kindsDto">
                             <!-- *ngIf="this.kindId!=kind.kindId; else whiteItem" -->
-                                <a *ngIf="this.kindId!=kind.kindId; else whiteItem;" style="margin: 0 0 15px 30px;color:rgb(79, 80, 79)" href="/kinds/{{kind.kindId}}/products"  (click)="this.kindId=kind.kindId;">
+                                <a *ngIf="this.kindId!=kind.kindId; else whiteItem;" style="margin: 0 0 15px 30px;color:rgb(79, 80, 79);" href="/kinds/{{kind.kindId}}/products"  (click)="this.kindId=kind.kindId;">
                                     {{kind.name}}
                                 </a>
                                 <ng-template #whiteItem>
-                                    <a style="margin: 0 0 15px 30px;color:rgb(79, 80, 79)" href="/kinds/{{kind.kindId}}/products" [routerLink]="['/{{kind.kindId}}/products']">
+                                    <a style="margin: 0 0 15px 30px;color:white" href="/kinds/{{kind.kindId}}/products">
                                         {{kind.name}}
                                     </a>
                                 </ng-template>
                                 <br/>
                         </li>
-
                     </div>
                 </div>
                 <div class="overflow-hidden "></div>
             </ul>
-            
         </div>
-       
     </div>
-    
 </div>
 <div style= "float:left; width: 85%; margin: 0 30px;">
     <router-outlet></router-outlet>

@@ -1,6 +1,5 @@
 @media screen and (max-width: 1400px) {
-    .kind-panel{
-        width: 100%; 
+    .kind-panel{ 
         background-color: rgb(201, 201, 201);
        
     }
@@ -23,6 +22,7 @@
     overflow: hidden;
     float:left; 
     width: 10%; 
+    min-width: 120px;
     background-color: rgb(201, 201, 201);
 }
 .kind-scroll{

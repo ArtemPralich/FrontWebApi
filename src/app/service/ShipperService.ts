@@ -10,6 +10,22 @@ export class ShipperService {
     constructor(private http:HttpClient){}
 
     public ReturnAllShippers():Observable<IShipper[]> {
-        return this.http.get<IShipper[]>(`${this.pathBase}`);
-      }
+       return this.http.get<IShipper[]>(`${this.pathBase}`);
+    }
+
+    public CreateShipper(id:number, shipper : IShipper):Observable<IShipper> {
+      return this.http.post<IShipper>(`${this.pathBase}/${id}`, shipper);
+    }
+
+    public EditShipper(id:number, shipper : IShipper):Observable<any>{
+      return this.http.put<any>(`${this.pathBase}/${id}`, shipper);
+    }
+
+    public DeleteShipper(id:number){
+      return this.http.delete<any>(`${this.pathBase}/${id}`);
+    }
+
+    public EditRetingShipper(id:number, stars:number){
+      return this.http.post<any>(`${this.pathBase}/${id}`, stars);
+    }
 }

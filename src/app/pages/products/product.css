@@ -8,6 +8,13 @@
     vertical-align: top;
     background-color: rgb(240, 240, 240);   
 }
+
+.catalog{ 
+    float:left;
+    width: 100%;
+    min-width: 400px;
+}
+
 .catalog-item:hover{
     outline: 1px solid #65994C; 
 }
@@ -26,6 +33,7 @@
     text-align: left;
 }
 .catalog-product{
+    min-width: 400px;
     min-height: 810px;
 }
 .kind-scroll{

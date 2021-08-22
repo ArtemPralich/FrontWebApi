@@ -15,7 +15,6 @@ export class AdminShipperComponent implements OnInit {
   get(){
     this.shipperService.ReturnAllShippers().subscribe(res => {
       this.shippers = res;
-      //this.pagination.countAllPage = this.getProducts.countPage;
     });
   }
 
