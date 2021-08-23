@@ -1,3 +1,23 @@
+@media screen and (max-width: 1700px) {
+    div.catalog-item{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 1460px) {
+    div.catalog-item{
+        margin-right: 1%;
+    }
+    div.paramsPanel{
+        min-width: 300px;
+        float: none;
+    }
+}
+.paramsPanel{
+    margin:0px 0%;
+    float: right; 
+    width:  20%; 
+    background-color: rgb(238, 234, 234);
+}
 .catalog-item{ /* Ширина */
     min-width: 300px ;
     max-height: 175px;
@@ -34,7 +54,7 @@
 }
 .catalog-product{
     min-width: 400px;
-    min-height: 810px;
+    min-height: 410px;
 }
 .kind-scroll{
     width:10% ;
