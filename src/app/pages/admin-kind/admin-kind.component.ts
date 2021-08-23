@@ -13,6 +13,13 @@ import { IndexKind } from 'typescript';
   styleUrls: ['./admin-kind.component.css']
 })
 export class AdminKindComponent implements OnInit {
+
+  constructor(private kindService : KindService, private router : Router, private pagination: PaginationService) {
+    this.pagination.invokeEvent.subscribe(value => {    
+      this.get(); 
+    });
+   }
+
   public kinds: IKind[] = [];
   
   public getKinds: IGetAllKinds = {
@@ -34,7 +41,6 @@ export class AdminKindComponent implements OnInit {
   };
 
   public editKind: IKind = this.kind;
-  constructor(private kindService : KindService, private router : Router, private pagination: PaginationService) { }
 
   ngOnInit(): void {
     this.get();

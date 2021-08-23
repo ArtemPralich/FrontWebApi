@@ -44,6 +44,9 @@ export class AdminProductComponent implements OnInit {
   public kindId: number = 1;
   public kindName: string = "";
   constructor(private productService : ProductService, private router : Router, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService, private kindService :KindService) { 
+    this.pagination.invokeEvent.subscribe(value => {    
+      this.get(); 
+    });
     this.route.params.subscribe(
       params => {
         if(params["id"] != null) {

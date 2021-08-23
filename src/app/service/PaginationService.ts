@@ -15,11 +15,8 @@ export class PaginationService {
 
     invokeEvent: Subject<any> = new Subject(); 
 
-    callMethodOfSecondComponent() { 
-        this.invokeEvent.next(someValue)      
-    }
-
-    reaload(){ 
+    realod() { 
+        this.invokeEvent.next()      
     }
     countPage(currentPage:number){
         if(currentPage>3) this.countNumPage = 3;
@@ -27,13 +24,10 @@ export class PaginationService {
     }
     changePage(num: number){
         this.countPage(this.currentPage);
-        if((this.currentPage  + num)<=this.countAllPage && (this.currentPage + num) >= 1 )
-        this.currentPage = this.currentPage + num;
-        this.callMethodOfSecondComponent()
-        
+        if((this.currentPage  + num)<=this.countAllPage && (this.currentPage + num) >= 1 ){
+            this.currentPage = this.currentPage + num;
+            this.realod()
+        }
     };
 }
 
-function someValue(someValue: any) {
-    throw new Error("Function not implemented.");
-}

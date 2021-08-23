@@ -9,7 +9,7 @@ import { PaginationService } from 'src/app/service/PaginationService';
 })
 export class PaginationComponent implements OnInit {
   constructor(public pagination : PaginationService) {
-       this.pagination.callMethodOfSecondComponent(); 
+       this.pagination.realod(); 
    }
   ngOnInit(): void {
   }

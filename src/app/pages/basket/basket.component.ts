@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IGetProductBasket } from 'src/app/interface/IGetProductBasket';
 import { BasketService } from 'src/app/service/BasketService';
+import { PaginationService } from 'src/app/service/PaginationService';
 
 @Component({
   selector: 'app-basket',
@@ -20,7 +21,11 @@ export class BasketComponent implements OnInit {
       this.totalPrice += element.count*element.returnProduct.price;
     });
   }
-  constructor(private basket: BasketService) { }
+  constructor(private basket: BasketService, private pagination: PaginationService) { 
+    this.pagination.invokeEvent.subscribe(value => {    
+      this.get(); 
+  });
+  }
   get(){
     this.basket.getBasket().subscribe(res=>{
       this.myProducts = res;
