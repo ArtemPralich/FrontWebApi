@@ -43,7 +43,7 @@ const routes: Routes = [
       { path: 'shippers', component: AdminShipperComponent,},
       { path: 'products', component: AdminProductComponent,},
       { path: 'kinds/:id/products', component: AdminProductComponent,},
-    ], canActivate: [RolesGuard]
+    ],// canActivate: [RolesGuard]
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
