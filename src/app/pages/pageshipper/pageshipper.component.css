@@ -1,0 +1,22 @@
+.div-shipper{
+   width: 70%;
+   background-color: rgb(231, 231, 231);
+   height: 800px; 
+   margin-left: 10%;
+   margin-top: 20px;
+   border: 1px rgb(204, 204, 204) solid;
+}
+.shipper-foto{
+   width: 400px;
+   height: 250px;
+   background-color: gray;
+   margin: 20px 30px 0px;
+   float:left;
+}
+.shipper-text{
+   margin: 20px 30px;
+   float:left;
+   min-width: 300px;
+   height: 250px;
+   background-color: green;
+}

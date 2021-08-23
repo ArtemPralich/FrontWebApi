@@ -13,6 +13,10 @@ export class ShipperService {
        return this.http.get<IShipper[]>(`${this.pathBase}`);
     }
 
+    public ReturnShipper(id:number):Observable<IShipper>{
+      return this.http.get<IShipper>(`${this.pathBase}/${id}`);
+    }
+
     public CreateShipper( shipper : IShipper):Observable<IShipper> {
       return this.http.post<IShipper>(`${this.pathBase}`, shipper);
     }

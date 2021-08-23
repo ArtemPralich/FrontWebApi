@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageshipperComponent } from './pageshipper.component';
+import { PageShipperComponent } from './pageshipper.component';
 
 describe('PageshipperComponent', () => {
-  let component: PageshipperComponent;
-  let fixture: ComponentFixture<PageshipperComponent>;
+  let component: PageShipperComponent;
+  let fixture: ComponentFixture<PageShipperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageshipperComponent ]
+      declarations: [ PageShipperComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageshipperComponent);
+    fixture = TestBed.createComponent(PageShipperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

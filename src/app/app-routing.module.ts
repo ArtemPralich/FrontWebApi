@@ -47,9 +47,8 @@ const routes: Routes = [
     ],// canActivate: [RolesGuard]
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
-  { path: 'shippers', component: ShipperComponent, children:[
-    { path: ':id', component: PageShipperComponent,},
-  ]},
+  { path: 'shippers', component: ShipperComponent},
+  { path: 'shippers/:id', component: PageShipperComponent},
   { path: 'register', component: RegisterComponent,},
   { path: 'login', component: LoginComponent, },
   { path: 'logout', component: LoginComponent},
