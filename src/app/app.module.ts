@@ -44,6 +44,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationInterceptor } from './interceptor/AuthenticationInterceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
+import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
+
 
 
 @NgModule({
@@ -55,7 +57,6 @@ import { RolesGuard } from './guards/roles.guard';
     HeaderCompanent,
     ShipperComponent,
     ProductComponent,
-    //RegisterComponent,
     LoginComponent,
     AdminComponent,
     AdminKindComponent,
@@ -67,6 +68,7 @@ import { RolesGuard } from './guards/roles.guard';
     UserComponent,
     BasketComponent,
     AccountComponent,
+    PageShipperComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,8 +77,6 @@ import { RolesGuard } from './guards/roles.guard';
     AppRoutingModule,
     NgbModule,
     RouterModule
-    //BrowserAnimationsModule,
-    //RegisterModule,
   ],
   providers: [
     RolesGuard,
@@ -89,7 +89,8 @@ import { RolesGuard } from './guards/roles.guard';
     ParamsProductService, 
     BasketService, 
     { provide: NZ_I18N, useValue: en_US },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true,}],
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true,},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

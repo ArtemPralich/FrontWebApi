@@ -18,6 +18,7 @@ import { BasketComponent } from './pages/basket/basket.component';
 import { AccountComponent } from './pages/account/account.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
+import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -46,7 +47,9 @@ const routes: Routes = [
     ],// canActivate: [RolesGuard]
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
-  { path: 'shippers', component: ShipperComponent},
+  { path: 'shippers', component: ShipperComponent, children:[
+    { path: ':id', component: PageShipperComponent,},
+  ]},
   { path: 'register', component: RegisterComponent,},
   { path: 'login', component: LoginComponent, },
   { path: 'logout', component: LoginComponent},

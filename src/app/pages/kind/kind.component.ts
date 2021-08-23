@@ -27,7 +27,9 @@ export class KindComponent implements OnInit{
     }
     public kindId:number = 0 ;
     constructor(private kindService: KindService, private route: ActivatedRoute ) {}
-    
+    setKind(n:number){
+      sessionStorage.setItem("kindId", `${n}`);
+    }
     get(){
       this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
         this.getKinds = res;
@@ -35,7 +37,10 @@ export class KindComponent implements OnInit{
     }
 
     ngOnInit(){
-
+      let a = sessionStorage.getItem("kindId")
+      if(a !== null){
+        this.kindId = +a;
+      }
       this.get();
     }
   }
