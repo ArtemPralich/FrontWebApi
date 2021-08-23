@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { IGetAllProduct } from "../interface/IGetAllProduct";
 //import { PaginationComponent } from "../sections/pagination/pagination.component";
 
@@ -12,8 +12,14 @@ export class PaginationService {
     public currentPage : number = 1;
     public countAllPage : number = 30;
     public test : number = 0;
-    reaload(){ ///reaload number pagination
-        //this.pagination.ngOnInit();
+
+    invokeEvent: Subject<any> = new Subject(); 
+
+    callMethodOfSecondComponent() { 
+        this.invokeEvent.next(someValue)      
+    }
+
+    reaload(){ 
     }
     countPage(currentPage:number){
         if(currentPage>3) this.countNumPage = 3;
@@ -23,6 +29,11 @@ export class PaginationService {
         this.countPage(this.currentPage);
         if((this.currentPage  + num)<=this.countAllPage && (this.currentPage + num) >= 1 )
         this.currentPage = this.currentPage + num;
+        this.callMethodOfSecondComponent()
         
     };
+}
+
+function someValue(someValue: any) {
+    throw new Error("Function not implemented.");
 }

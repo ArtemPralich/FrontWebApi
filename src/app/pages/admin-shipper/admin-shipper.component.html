@@ -1,27 +1,78 @@
 
+<button style="margin-top:10px;float:right; margin-left: 1%;" class="btn btn-dark" type="button" data-toggle="modal" data-target="#exampleModalCreateKind" >
+    Create
+</button>
+<div class="modal fade" id="exampleModalCreateKind" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Create kind</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                <label>Name</label>
+                <input id="" type="text" size="10" class="form-control" [(ngModel)]="this.newshipper.name" >
+            </p>
+            <p>
+                <label> Location Lat</label>
+                <input type="text" size="10" class="form-control" [ngModel]="this.newshipper.locationLat">
+            </p>
+            <p>
+                <label> Location Lng</label>
+                <input type="text" size="10" class="form-control" [ngModel]="this.newshipper.locationLat">
+            </p>
+            <p>
+                <label>Foto</label>
+                <input type="text" size="10" class="form-control" [ngModel]="this.newshipper.foto">
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="create()" >Create </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
     <table class="table table-hover">
         <caption>Shippers</caption>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Delete</th>
-                <th>Edit</th>
+                <th>Rating</th>
+                <th>Location</th>
+                <th class="table-button">Delete</th>
+                <th class="table-button">Edit</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let shipper of shippers">
+            <tr *ngFor="let shippe of shippers">
                 <td>
-                    {{shipper.shipperId}}
+                    {{shippe.shipperId}}
                 </td>
                 <td>
-                    {{shipper.name}}
+                    {{shippe.name}}
                 </td>
                 <td>
-                    <button type="button" class="btn btn-dark"  >Delete</button>
+                    {{shippe.finalRating}}/5
                 </td>
                 <td>
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit">Edit</button>
+                    {{shippe.locationLat}}
+                    {{shippe.locationLng}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark" (click)="delete(shippe.shipperId)" >Delete</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalEdit" (click)="this.copy(shippe)">Edit</button>
 
                 <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -36,32 +87,24 @@
                             
                             <p>
                                 <label>Name</label>
-                                <input type="text" size="10" class="form-control" >
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.shipper.name">
                             </p>
                             <p>
-                                <label>Price</label>
-                                <input type="number" size="10" class="form-control" >
+                                <label> Location Lat</label>
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.shipper.locationLat">
                             </p>
                             <p>
-                                <label>About</label>
-                                <textarea type="text" size="10" class="form-control"></textarea>
+                                <label> Location Lng</label>
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.shipper.locationLat">
                             </p>
                             <p>
                                 <label>Foto</label>
-                                <input type="text" size="10" class="form-control">
-                            </p>
-                            <p>
-                                <label>ShipperId</label>
-                                <input type="number" size="10" class="form-control" >
-                            </p>
-                            <p>
-                                <label>KindId</label>
-                                <input type="number" size="10" class="form-control">
+                                <input type="text" size="10" class="form-control" [(ngModel)]="this.shipper.foto">
                             </p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-dark" data-dismiss="modal" >Add </button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="this.edit()">Edit </button>
                         </div>
                       </div>
                     </div>

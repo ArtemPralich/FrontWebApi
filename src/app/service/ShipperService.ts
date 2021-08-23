@@ -13,8 +13,8 @@ export class ShipperService {
        return this.http.get<IShipper[]>(`${this.pathBase}`);
     }
 
-    public CreateShipper(id:number, shipper : IShipper):Observable<IShipper> {
-      return this.http.post<IShipper>(`${this.pathBase}/${id}`, shipper);
+    public CreateShipper( shipper : IShipper):Observable<IShipper> {
+      return this.http.post<IShipper>(`${this.pathBase}`, shipper);
     }
 
     public EditShipper(id:number, shipper : IShipper):Observable<any>{
@@ -26,6 +26,6 @@ export class ShipperService {
     }
 
     public EditRetingShipper(id:number, stars:number){
-      return this.http.post<any>(`${this.pathBase}/${id}`, stars);
+      return this.http.post<any>(`${this.pathBase}/rating/${id}`, stars);
     }
 }

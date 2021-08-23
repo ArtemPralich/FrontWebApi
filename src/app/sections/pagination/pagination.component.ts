@@ -8,7 +8,9 @@ import { PaginationService } from 'src/app/service/PaginationService';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-  constructor(public pagination : PaginationService) { }
+  constructor(public pagination : PaginationService) {
+       this.pagination.callMethodOfSecondComponent(); 
+   }
   ngOnInit(): void {
   }
 }

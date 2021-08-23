@@ -21,7 +21,7 @@
                         rererer 
                     </td>
                     <td>
-                        ID
+                        45
                     </td>
                     <td>
                         <div style="margin-top: 30px;">
@@ -42,16 +42,16 @@
                         </div>
                     </td>
                     <td>
-                        {{shipper.shipperId}}
-                    </td>
-                    <td>
                         {{shipper.name}}
                     </td>
                     <td>
-                        <div *ngFor="let d of this.getStars(3, true)">
+                        {{shipper.shipperId}}
+                    </td>
+                    <td>
+                        <div *ngFor="let d of this.getStars(shipper.finalRating, true)">
                             <div class="d14" (click)="this.editStars(shipper.shipperId, d)"></div>
                         </div>
-                        <div *ngFor="let d of this.getStars(3, false)">
+                        <div *ngFor="let d of this.getStars(shipper.finalRating, false)">
                             <div class="d14 d14gray" (click)="this.editStars(shipper.shipperId, d)"></div>
                         </div>
                     </td>

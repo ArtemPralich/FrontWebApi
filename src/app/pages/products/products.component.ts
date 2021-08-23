@@ -16,7 +16,7 @@ import { BasketService } from 'src/app/service/BasketService';
 })
 
 export class ProductComponent implements OnInit{
-    
+     
     public getProducts: IGetAllProduct = {
         countPage: 1,
         currentPage:1,
@@ -25,6 +25,11 @@ export class ProductComponent implements OnInit{
     public kindId: number = 1;
 
     constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService, public basket:BasketService) {
+        this.pagination.invokeEvent.subscribe(value => {
+            if(value === 'someVal'){
+            this.get(); 
+           }
+          });
     }
      
     get(){        

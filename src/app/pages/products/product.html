@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div  class = "catalog-product" style="float: left; width: 40%;"> 
+    <div  class = "catalog-product" style="float: left; max-width: 1200px;"> 
         <div>
             <div style="margin:10px 1%;">
                 <div *ngFor="let product of getProducts.productsDto" class="catalog-item">
@@ -84,7 +84,8 @@
     
         </div>
         <div  style="margin:0px auto;">
-            <app-pagination (click)="this.get()"></app-pagination>
+            <app-pagination ></app-pagination> 
+            <!-- (click)="this.get()" -->
         </div>
     </div>  
 </div>

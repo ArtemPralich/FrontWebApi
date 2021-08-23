@@ -17,15 +17,17 @@ export class ShipperComponent implements OnInit{
       alert(a);
     }
 
+    
     editStars(id:number, stars:number){
       this.shipperService.EditRetingShipper(id, stars).subscribe(res =>{
-
+        this.get();
       },error =>{
         alert("nononononono");
       })
     }
 
     getStars(n:number,m:boolean):number[]{
+      n = Math.round(n);
       if(m == false){
         let a:number[] = new Array(5 - n);
         for(let b = 1; b <= a.length; b++){
@@ -50,5 +52,6 @@ export class ShipperComponent implements OnInit{
 
 
     ngOnInit(){
+      this.get()
     }
   }
