@@ -1,0 +1,8 @@
+<div>
+    <div *ngFor="let d of this.ratingService.getStars(this.CountStars, true)">
+        <div class="d14" (click)="this.ratingService.edit(this.ObjectId, d)"></div>
+    </div>
+    <div *ngFor="let d of this.ratingService.getStars(this.CountStars, false)">
+        <div class="d14 d14gray" (click)="this.ratingService.edit(this.ObjectId, d)"></div>
+    </div>
+</div>

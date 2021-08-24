@@ -26,12 +26,8 @@
                         {{shipper.shipperId}}
                     </td>
                     <td>
-                        <div *ngFor="let d of this.getStars(shipper.finalRating, true)">
-                            <div class="d14" (click)="this.editStars(shipper.shipperId, d)"></div>
-                        </div>
-                        <div *ngFor="let d of this.getStars(shipper.finalRating, false)">
-                            <div class="d14 d14gray" (click)="this.editStars(shipper.shipperId, d)"></div>
-                        </div>
+                        
+                        <app-starrating [ObjectId]="shipper.shipperId" [CountStars]="shipper.finalRating" ></app-starrating>
                     </td>
                 </tr>
             </tbody>

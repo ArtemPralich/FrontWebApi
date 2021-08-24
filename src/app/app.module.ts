@@ -48,6 +48,8 @@ import { PageShipperComponent } from './pages/pageshipper/pageshipper.component'
 import { NoauthGuard } from './guards/noauth.guards';
 import { NotificationComponent } from './sections/notification/notification.component';
 import { NotificationService } from './service/NotificationRename';
+import { StarratingComponent } from './sections/starrating/starrating.component';
+import { StarsRatingService } from './service/StarsRatingService';
 
 
 
@@ -73,6 +75,8 @@ import { NotificationService } from './service/NotificationRename';
     AccountComponent,
     PageShipperComponent,
     NotificationComponent,
+    StarratingComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -93,7 +97,8 @@ import { NotificationService } from './service/NotificationRename';
     PaginationService, 
     ParamsProductService, 
     NotificationService,
-    BasketService, 
+    BasketService,
+    StarsRatingService, 
     { provide: NZ_I18N, useValue: en_US },
     { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true,},
   ],

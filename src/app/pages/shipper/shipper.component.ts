@@ -3,6 +3,8 @@ import { IShipper } from '../../interface/IShipper';
 import { Observable } from "rxjs";
 import { ShipperService } from '../../service/ShipperService';
 import { OnInit } from '@angular/core';
+import { StarratingComponent } from 'src/app/sections/starrating/starrating.component';
+import { StarsRatingService } from 'src/app/service/StarsRatingService';
 
 @Component({
     selector: 'shipper-app',
@@ -12,12 +14,13 @@ import { OnInit } from '@angular/core';
 
 export class ShipperComponent implements OnInit{
     public shippers: IShipper[] =[];
-    constructor(private shipperService: ShipperService) { }
-    al(a:any){
-      alert(a);
-    }
-
     
+    constructor(private shipperService: ShipperService, public starsService: StarsRatingService ) { 
+      this.starsService.invokeEvent.subscribe(value => {    
+        this.editStars(this.starsService.ObjectId,this.starsService.returnStars);
+      });
+    }
+        
     editStars(id:number, stars:number){
       this.shipperService.EditRetingShipper(id, stars).subscribe(res =>{
         this.get();
