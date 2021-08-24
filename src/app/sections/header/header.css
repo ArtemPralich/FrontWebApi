@@ -1,7 +1,7 @@
 .logo{
     margin: 25px 0 auto 30px ;
     float: left;
-    color : white;
+    color : rgb(0, 0, 0);
 }
 .menuItem{
     float: left;
@@ -15,9 +15,11 @@
 .menuHub{
     width: 100%;
     height: 80px;
-    background-color: rgb(59, 48, 48);
+    background-color: rgb(255, 255, 255);
     color: rgb(165, 65, 65);
     line-height: 80px;
+    border-bottom: rgba(216, 234, 236, 0.4) 1px solid;
+    box-shadow: 0 0 10px rgba(62, 65, 68, 0.2)
 }
 .textItem{
     font-size: 110%;
@@ -42,14 +44,14 @@ ul li{
 .ml-auto {
     display:inline-block!important;
 }
-  
+
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 }
 .account-menu{
-    margin-top: -15px;
+    margin-top: -20px;
     margin-left: -10%;
-    background-color: rgb(168, 162, 162);
+    background-color: rgb(238, 234, 234);
 }
 .account-menu-items{
     margin-left: 5%;
@@ -58,9 +60,12 @@ ul li{
     line-height: 20px;
 }
 .account-menu-link{
-    color: white;
+    color: rgb(131, 133, 131);
+}
+.account-menu-link:hover{
+    color: rgb(87, 87, 87);
 }
 .account-menu-line{
-    color: white;
+    color: rgb(122, 122, 122);
     margin-bottom: 5px;
 }

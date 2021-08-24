@@ -16,13 +16,7 @@
     </div>
     <div class="menuItem">
         <a class="textItems" *ngIf="this.isLoggedIn() " routerLink="/login">Login</a><br/>
-    </div>
-    <!-- <ng-template #logout>
-        <div class="menuItem">
-            <a *ngIf="!this.isLoggedIn()" href="/logout" (click)="this.loginService.logout();" >Logout</a><br/>
-        </div>
-    </ng-template>    -->
-    
+    </div>   
         
     <div class="menuItem1 dropdown">
         <a class="dropdown-toggle" id="navbarDropdownMenuAccount" *ngIf="!this.isLoggedIn()" href="/user/1">
@@ -43,9 +37,7 @@
                 <a class="account-menu-link" (click)="this.authService.logout();">Logout</a>
             </p>
         </div>
-    </div>
-                
-        
+    </div>      
 </div>
 
 

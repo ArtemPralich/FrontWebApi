@@ -1,0 +1,38 @@
+.product-page{
+    margin-top: 30px;
+}
+.kind-panel{
+    margin-top: 15px;
+    width: 15%;
+    height:300px;
+    float:left;
+}
+.product-catalog{
+    border:rgb(190, 190, 190) 1px solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px rgba(62, 65, 68, 0.5);
+    width: 80%;
+    margin: 0 2% 0 2%;
+    height:300px;
+    float:left;
+    background-color: white;
+}
+.catalog-items-box{
+    width: 98%;
+    margin: 10px auto;
+    background-color: gray;
+}
+.kind-panel-name{
+    width: 80%;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}
+.kind-panel-items{
+    color:gray;
+    width: 80%;
+    margin-left: 15%;
+}
+.product-catalog-name{
+    margin: 2% 20px;
+    font-size: 15px;
+}

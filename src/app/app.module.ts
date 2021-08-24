@@ -50,6 +50,7 @@ import { NotificationComponent } from './sections/notification/notification.comp
 import { NotificationService } from './service/NotificationRename';
 import { StarratingComponent } from './sections/starrating/starrating.component';
 import { StarsRatingService } from './service/StarsRatingService';
+import { NewproductComponent } from './newproduct/newproduct.component';
 
 
 
@@ -76,6 +77,7 @@ import { StarsRatingService } from './service/StarsRatingService';
     PageShipperComponent,
     NotificationComponent,
     StarratingComponent,
+    NewproductComponent,
 
   ],
   imports: [

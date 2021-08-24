@@ -20,6 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
 import { NoauthGuard } from './guards/noauth.guards';
+import { NewproductComponent } from './newproduct/newproduct.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -49,6 +50,7 @@ const routes: Routes = [
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
+  { path: 'products', component: NewproductComponent},
   { path: 'shippers/:id', component: PageShipperComponent},
   { path: 'register', component: RegisterComponent,},
   { path: 'login', component: LoginComponent},
