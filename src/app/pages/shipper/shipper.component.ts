@@ -3,7 +3,6 @@ import { IShipper } from '../../interface/IShipper';
 import { Observable } from "rxjs";
 import { ShipperService } from '../../service/ShipperService';
 import { OnInit } from '@angular/core';
-import { StarratingComponent } from 'src/app/sections/starrating/starrating.component';
 import { StarsRatingService } from 'src/app/service/StarsRatingService';
 
 @Component({

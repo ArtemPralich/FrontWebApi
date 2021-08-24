@@ -3,20 +3,74 @@
         width: 300px;
     }
 }
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1466px) {
     div.catalog-item{
         margin-right: 1%;
+        width: 350px;
+    }
+    div.catalog-product{
+        max-width: 750px;
     }
     div.paramsPanel{
         min-width: 300px;
-        float: none;
+
     }
 }
+@media screen and (max-width: 1270px) {
+    div.catalog-item{
+        margin-right: 1%;
+        width: 300px;
+    }
+    div.catalog-product{
+        max-width: 630px;
+    }
+    
+}
+@media (max-width: 720px) {
+    div.paramsPanel{
+        float: none;
+        min-width: 300px;
+        margin: 10px 10px;
+    }
+    div.catalog-item{
+        float: none;
+        width: 350px;
+        margin: 10px 10px;
+    }
+}
+@media (max-width: 500px) {
+    div.paramsPanel{
+        float: none;
+        min-width: 80%;
+        margin: 0px auto;
+    }
+    div.catalog-item{
+        float: none;
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+@media screen and (max-width: 1121px) {
+    div.catalog-item{
+        margin-right: 1%;
+        width: 340px;
+    }
+    div.catalog-product{
+        max-width: 400px;
+    }
+    
+}
 .paramsPanel{
-    margin:0px 0%;
+    margin:10px 0%;
     float: right; 
     width:  20%; 
     background-color: rgb(238, 234, 234);
+}
+.catalog-product{
+    min-width: 400px;
+    float: left; 
+    width: 79%;
+    min-height: 410px;
 }
 .catalog-item{ /* Ширина */
     min-width: 300px ;
@@ -51,10 +105,6 @@
     float:right;
     position: relative;
     text-align: left;
-}
-.catalog-product{
-    min-width: 400px;
-    min-height: 410px;
 }
 .kind-scroll{
     width:10% ;
