@@ -6,7 +6,6 @@ import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
- // template:" <header-app></header-app>"
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

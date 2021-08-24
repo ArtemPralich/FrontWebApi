@@ -8,6 +8,7 @@ import { IGetAllProduct } from 'src/app/interface/IGetAllProduct';
 import { PaginationService } from 'src/app/service/PaginationService';
 import { ParamsProductService } from 'src/app/service/ParamsProductService';
 import { BasketService } from 'src/app/service/BasketService';
+import { NotificationService } from 'src/app/service/NotificationRename';
 
 @Component({
     selector: 'product-app',
@@ -16,7 +17,7 @@ import { BasketService } from 'src/app/service/BasketService';
 })
 
 export class ProductComponent implements OnInit{
-     
+    public boolNotif: boolean = false;
     public getProducts: IGetAllProduct = {
         countPage: 1,
         currentPage:1,
@@ -24,7 +25,8 @@ export class ProductComponent implements OnInit{
     }
     public kindId: number = 1;
 
-    constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, public params: ParamsProductService, public basket:BasketService) {
+    constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, 
+                public params: ParamsProductService, public basket:BasketService, public notificationService :NotificationService) {
         this.pagination.invokeEvent.subscribe(value => {    
             this.get(); 
         });
@@ -44,7 +46,7 @@ export class ProductComponent implements OnInit{
     }
     addBasket(id:number, count:number){
         this.basket.addProduct(id,count).subscribe(res =>{
-            alert("Success")
+        this.notificationService.output("Added!")
         },error=>{
             alert("nononnono")
         })

@@ -1,0 +1,26 @@
+.fixdiv{
+    width: 15%;
+    min-width: 200px;
+    height: 70px;
+    right: 10px;
+    bottom: 10px;
+    position: fixed;
+    background-color: rgba(189, 189, 189,0.4);
+    border-radius: 3px;
+    border: gray 1px solid;
+    animation: anim 2.5s ;
+}
+@keyframes anim {
+    from {opacity:1;}
+    to {opacity:0;}  
+}
+
+.fixp{
+    margin: 0 auto;
+    position: absolute;               /* 2 */
+    top: 50%;
+    left: 50%;
+    color: rgb(114, 114, 114);
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}

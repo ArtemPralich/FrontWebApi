@@ -45,6 +45,9 @@ import { AuthenticationInterceptor } from './interceptor/AuthenticationIntercept
 import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
+import { NoauthGuard } from './guards/noauth.guards';
+import { NotificationComponent } from './pages/notification/notification.component';
+import { NotificationService } from './service/NotificationRename';
 
 
 
@@ -69,6 +72,7 @@ import { PageShipperComponent } from './pages/pageshipper/pageshipper.component'
     BasketComponent,
     AccountComponent,
     PageShipperComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,12 +85,14 @@ import { PageShipperComponent } from './pages/pageshipper/pageshipper.component'
   providers: [
     RolesGuard,
     AuthGuard,
+    NoauthGuard,
     KindService, 
     ShipperService, 
     ProductService, 
     AuthService, 
     PaginationService, 
     ParamsProductService, 
+    NotificationService,
     BasketService, 
     { provide: NZ_I18N, useValue: en_US },
     { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true,},

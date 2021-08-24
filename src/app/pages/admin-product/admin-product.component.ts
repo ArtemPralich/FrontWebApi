@@ -87,30 +87,30 @@ export class AdminProductComponent implements OnInit {
   create(){
     this.productService.CreateProduct(this.kindId,this.actProduct).subscribe(res=>{
       console.log("cteated")
+      this.actProduct.name = "";
+      this.actProduct.price = 0;
+      location.reload();
     }, error =>{
       alert("Create failed");
     })
-    this.actProduct.name = "";
-    this.actProduct.price = 0;
-    location.reload();
   }
 
   edit(){
     this.productService.EditProduct(this.kindId, this.editProduct.productId, this.editProduct).subscribe(res=>{
       console.log("edited")
+      location.reload();
     },error =>{
       alert("Edit failed");
     })
-    location.reload();
   }
 
   delete(id:number){
     this.productService.DeleteProduct(this.kindId, id).subscribe((data)=>{
       console.log("deleted");
+      location.reload();
     },error =>{
         alert("Edit failed");
     });
-    location.reload();
   }
 
 }

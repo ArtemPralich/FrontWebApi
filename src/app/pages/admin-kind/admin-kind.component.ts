@@ -59,20 +59,22 @@ export class AdminKindComponent implements OnInit {
   }
   create(){ 
     console.log(this.kind.name);
-    this.kindService.CreateKind(this.kind).subscribe((data)=>{console.log("created");},
+    this.kindService.CreateKind(this.kind).subscribe((data)=>{
+      console.log("created");
+      location.reload();
+    },
     error=>{
       alert("Creare kind failed")
     });
-    location.reload();
   }
   delete(id:number){
     this.kindService.DeleteKind(id).subscribe((data)=>{
+      location.reload();
       console.log("deleted");});
-    location.reload();
   }
   edit(id:number){
     this.kindService.EditKind(id, this.editKind ).subscribe((data)=>{ 
-      console.log("edited");});
       location.reload();
+      console.log("edited");});
   }
 }

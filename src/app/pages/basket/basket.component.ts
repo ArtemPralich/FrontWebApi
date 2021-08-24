@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IGetProductBasket } from 'src/app/interface/IGetProductBasket';
 import { BasketService } from 'src/app/service/BasketService';
+import { NotificationService } from 'src/app/service/NotificationRename';
 import { PaginationService } from 'src/app/service/PaginationService';
 
 @Component({
@@ -21,7 +22,7 @@ export class BasketComponent implements OnInit {
       this.totalPrice += element.count*element.returnProduct.price;
     });
   }
-  constructor(private basket: BasketService, private pagination: PaginationService) { 
+  constructor(private basket: BasketService, private pagination: PaginationService, private notificationService: NotificationService) { 
     this.pagination.invokeEvent.subscribe(value => {    
       this.get(); 
   });
@@ -42,6 +43,7 @@ export class BasketComponent implements OnInit {
   }
   delete(productId:number,){
     this.basket.deleteProduct(productId).subscribe(res=>{
+      this.notificationService.output("Deleted");
       this.get();
       //location.reload();
     },error=>{});
@@ -51,7 +53,5 @@ export class BasketComponent implements OnInit {
   }
   ngOnInit(): void {
     this.get();
-
   }
-
 }

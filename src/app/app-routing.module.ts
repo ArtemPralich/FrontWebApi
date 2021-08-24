@@ -19,6 +19,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
+import { NoauthGuard } from './guards/noauth.guards';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -44,13 +45,13 @@ const routes: Routes = [
       { path: 'shippers', component: AdminShipperComponent,},
       { path: 'products', component: AdminProductComponent,},
       { path: 'kinds/:id/products', component: AdminProductComponent,},
-    ],// canActivate: [RolesGuard]
+    ], canActivate: [RolesGuard]
   },
   //{ path: 'kinds/:id/products', component: ProductComponent,},  // maybe // children: [ { outlet: "primary", path: ':id/products', component: ProductComponent, }]},// свойство outlet используется для назначения router-outlet
   { path: 'shippers', component: ShipperComponent},
   { path: 'shippers/:id', component: PageShipperComponent},
   { path: 'register', component: RegisterComponent,},
-  { path: 'login', component: LoginComponent, },
+  { path: 'login', component: LoginComponent},
   { path: 'logout', component: LoginComponent},
   { path: '**', component: NotFoundComponent},
 ];
