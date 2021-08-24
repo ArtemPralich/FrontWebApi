@@ -1,3 +1,55 @@
+@media screen and (max-width:1335px){
+    div.kind-panel{
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
+    div.product-catalog-filter{
+        width:100%;
+    }
+    .product-catalog{
+        margin: 0 0;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:1070px){
+    div.kind-panel{
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
+    div.product-filters{
+        float: none;
+        margin: 0 2%;
+        width: 300px;
+    }
+    div.product-catalog-filter{
+        width:100%;
+    }
+    div.product-catalog{
+        float:none;
+        width: 98%;
+        margin: 10px auto;
+        font-size: 15px;
+    }
+    div.catalog-item{
+        width: 300px;
+        
+    }
+}
+@media screen and (max-width:400px){
+    div.catalog-item{
+        float:none;
+        width: 90%;
+        margin: 10px 5%;
+    }
+    div.product-filters{
+        float: none;
+        margin: 10px auto;
+        width: 90%;
+    }
+}
+
 .product-page{
     margin-top: 30px;
 }
@@ -7,20 +59,30 @@
     height:300px;
     float:left;
 }
+.product-catalog-filter{
+    width: 80%;
+    float: left;
+}
 .product-catalog{
     border:rgb(190, 190, 190) 1px solid;
     border-radius: 2px;
     box-shadow: 0px 0px 10px rgba(62, 65, 68, 0.5);
-    width: 80%;
+    width: 70%;
     margin: 0 2% 0 2%;
-    height:300px;
     float:left;
     background-color: white;
+}
+.product-filters{
+    border:rgb(190, 190, 190) 1px solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px rgba(62, 65, 68, 0.5);
+    background-color: white;
+    width:25%;
+    float: right;
 }
 .catalog-items-box{
     width: 98%;
     margin: 10px auto;
-    background-color: gray;
 }
 .kind-panel-name{
     width: 80%;
@@ -35,4 +97,48 @@
 .product-catalog-name{
     margin: 2% 20px;
     font-size: 15px;
+}
+
+
+.catalog-item{ /* Ширина */
+    min-width: 300px ;
+    max-height: 175px;
+    width: 350px;
+    margin: 0 2% 15px 0; /* Отступы */
+    text-align: center; /* Выравнивание по центру */
+    display: inline-block; /* Строчно-блочный элемент */
+    vertical-align: top;
+    background-color: rgb(240, 240, 240);   
+}
+
+.catalog-item:hover{
+    outline: 1px solid #65994C; 
+}
+.catalog-item-foto{
+    width: 50%; 
+    height:150px; 
+    margin: 15px 0% 10px 3%;  
+    float:left;
+    background-color: rgb(192, 176, 176);
+}
+.catalog-item-text{
+    margin: 0 6%;   
+    width: 35%;
+    float:right;
+    position: relative;
+    text-align: left;
+}
+
+.plusclass{
+    width:20%; 
+    cursor: pointer; 
+    float:left; 
+    border: 1px rgb(122, 122, 122) solid; 
+    text-align: center; 
+    background-color: rgb(128, 128, 128); 
+    color: azure;
+}
+
+.plusclass:hover{
+    background-color: rgb(99, 99, 99); 
 }
