@@ -43,7 +43,7 @@ export class BasketComponent implements OnInit {
   }
   delete(productId:number,){
     this.basket.deleteProduct(productId).subscribe(res=>{
-      this.notificationService.output("Deleted");
+      this.notificationService.output("Deleted!");
       this.get();
       //location.reload();
     },error=>{});

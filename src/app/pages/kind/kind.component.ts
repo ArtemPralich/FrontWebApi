@@ -26,7 +26,8 @@ export class KindComponent implements OnInit{
       pageNumber: 1,
     }
     public kindId:number = 0 ;
-    constructor(private kindService: KindService, private route: ActivatedRoute ) {}
+    constructor(private kindService: KindService, private route: ActivatedRoute ) {
+    }
     setKind(n:number){
       sessionStorage.setItem("kindId", `${n}`);
     }

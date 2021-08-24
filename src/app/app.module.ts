@@ -46,7 +46,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { PageShipperComponent } from './pages/pageshipper/pageshipper.component';
 import { NoauthGuard } from './guards/noauth.guards';
-import { NotificationComponent } from './pages/notification/notification.component';
+import { NotificationComponent } from './sections/notification/notification.component';
 import { NotificationService } from './service/NotificationRename';
 
 
