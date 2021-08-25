@@ -9,6 +9,8 @@ import { PaginationService } from 'src/app/service/PaginationService';
 import { ParamsProductService } from 'src/app/service/ParamsProductService';
 import { BasketService } from 'src/app/service/BasketService';
 import { NotificationService } from 'src/app/service/NotificationRename';
+import { KindService } from 'src/app/service/KindService';
+import { IGetAllKinds } from 'src/app/interface/IGetAllKinds';
 
 @Component({
     selector: 'product-app',
@@ -23,15 +25,30 @@ export class ProductComponent implements OnInit{
         currentPage:1,
         productsDto: []
     }
+    public getKinds: IGetAllKinds = {
+        countPage: 1,
+        currentPage:1,
+        kindsDto: []
+      }
+        Params = {
+          searchTerm: "",
+          pageSize: 150,
+          pageNumber: 1,
+        }
     public kindId: number = 1;
 
     constructor(private productsService: ProductService, private route: ActivatedRoute, public pagination: PaginationService, 
-                public params: ParamsProductService, public basket:BasketService, public notificationService :NotificationService) {
+                public params: ParamsProductService, public basket:BasketService, public notificationService :NotificationService, 
+                private kindService: KindService) {
         this.pagination.invokeEvent.subscribe(value => {    
             this.get(); 
         });
     }
-     
+    getKind(){
+        this.kindService.ReturnAllKinds(this.Params).subscribe(res => {
+          this.getKinds = res;
+        });
+      }
     get(){        
         this.route.params.subscribe(
             params => {
@@ -53,5 +70,6 @@ export class ProductComponent implements OnInit{
     }
     ngOnInit(){
         this.get();
+        this.getKind();
     }
   }

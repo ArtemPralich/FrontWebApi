@@ -1,7 +1,13 @@
-<div class="menuHub">
-    <div (click) = 'this.router.navigate(["/"]);'>
-        <h4 class="logo">LOGO</h4>
+<div class="menuHub" id="menuHub">
+    <div class="div-logo-foto" >
+        <div class="logo" (click) = 'this.router.navigate(["/"]);'>
+            <h4 >LOGO</h4>
+        </div>
+        <div class="menuItem fotoItem" (click)="visibleMenu()">
+            <img width="32px" height="32px" src="https://image.flaticon.com/icons/png/512/60/60510.png">
+        </div> 
     </div>
+    
     <div class="menuItem">
         <a class=" textItems" routerLink="">Home</a><br/>
     </div>
@@ -14,9 +20,10 @@
     <div class="menuItem">
         <a class="textItems" routerLink="/about">About</a><br/>
     </div>
-    <div class="menuItem">
-        <a class="textItems" *ngIf="this.isLoggedIn() " routerLink="/login">Login</a><br/>
+    <div class="menuItem" *ngIf="this.isLoggedIn()">
+        <a class="textItems" routerLink="/login">Login</a><br/>
     </div>   
+
         
     <div class="menuItem1 dropdown">
         <a class="dropdown-toggle" id="navbarDropdownMenuAccount" *ngIf="!this.isLoggedIn()" href="/user/1">

@@ -1,58 +1,80 @@
-<div class="catalog">
+<div class="product-page">
+    <div class="kind-panel">
+        <div class="kind-panel-name">
+            <h6>
+                Kinds
+            </h6>
+        </div>
+        <div class="kind-scroll overflow-auto">
+            <div style="width: 95%; overflow: hidden;">
+                <div class="kind-panel-items" *ngFor="let kind of getKinds.kindsDto">
+                    <p>
+                        <a class="kind-panel-items-a" href="/kinds/{{kind.kindId}}/products">
+                            {{kind.name}}
+                        </a>
+                    </p>
+                </div>
 
-    <div   class="paramsPanel" >
-        <div style="width: 90%; margin: 0 auto;">
-            <p style="margin:10px 0">
-                <label>Поиск</label>
-                <input id="search" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.searchTerm">
-            </p>
-            <div>
-                <div style="width:49%;float: left; margin: 0 2% 0 0;">
-                    <p>
-                        <label>Минимальная цена</label>
-                        <input id="minPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.minPrice">
-                    </p>
-                </div>
-                <div style="width:49%;float: left;">
-                    <p>
-                        <label>Максимальная цена</label>
-                        <input id="maxPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.maxPrice">
-                    </p>
-                </div>
             </div>
-            <form method="post">
-                <div style="float:top;">
-                    <p>
-                        <label>Валюта</label><br/>
-                        <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="this.params.currency('selectCurrency');" >
-                            <option selected>Open this select menu</option>
-                            <option value="rub">Российские рубли</option>
-                            <option value="byn">Белорусские рубли</option>
-                            <option value="eur">Евро</option>
-                            <option value="usd">Доллары</option>
-                        </select>
-            
-                    </p>
-            
-                </div>
-            </form>
-            
-            <form style="margin: 0 0px 15px 0;" method="post">
-                <label>Сортировать по</label><br/>
-                <select class="form-control form-select" id="sort" size="2" multiple aria-label="multiple select example" id="sort" (change)="this.params.sort('sort');" >
-                    <option value="name">Имя продукта</option>
-                    <option value="price">Цена</option>
-                </select>
-            </form>
-            
-                <button style="width: 100%; margin-bottom: 10px;" type="button" class="btn btn-secondary"  data-dismiss="modal" (click)="get()">Enter</button>
-        
         </div>
     </div>
-
-    <div  class = "catalog-product" > 
-        <div>
-            <div style="margin:10px 1%;">
+    
+    <div class="product-catalog-filter">
+        <div class="product-filters">
+            <div style="width: 90%; margin: 0 auto;">
+                <p style="margin:10px 0">
+                    <label>Поиск</label>
+                    <input id="search" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.searchTerm">
+                </p>
+                <div>
+                    <div style="width:49%;float: left; margin: 0 2% 0 0;">
+                        <p>
+                            <label>Минимальная цена</label>
+                            <input id="minPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.minPrice">
+                        </p>
+                    </div>
+                    <div style="width:49%;float: left;">
+                        <p>
+                            <label>Максимальная цена</label>
+                            <input id="maxPrice" type="text" size="10" class="form-control" [(ngModel)]="this.params.Params.maxPrice">
+                        </p>
+                    </div>
+                </div>
+                <form method="post">
+                    <div style="float:top;">
+                        <p>
+                            <label>Валюта</label><br/>
+                            <select id="selectCurrency"  class="form-control form-select form-select-lg mb-3" aria-label="Default select example"  (change)="this.params.currency('selectCurrency');" >
+                                <option selected>Open this select menu</option>
+                                <option value="rub">Российские рубли</option>
+                                <option value="byn">Белорусские рубли</option>
+                                <option value="eur">Евро</option>
+                                <option value="usd">Доллары</option>
+                            </select>
+                
+                        </p>
+                
+                    </div>
+                </form>
+                
+                <form style="margin: 0 0px 15px 0;" method="post">
+                    <label>Сортировать по</label><br/>
+                    <select class="form-control form-select" id="sort" size="2" multiple aria-label="multiple select example" id="sort" (change)="this.params.sort('sort');" >
+                        <option value="name">Имя продукта</option>
+                        <option value="price">Цена</option>
+                    </select>
+                </form>
+                
+                <button style="width: 100%; margin-bottom: 10px;" type="button" class="btn btn-secondary"  data-dismiss="modal" (click)="get()">
+                    Enter
+                </button>    
+            </div>
+        </div>
+        <div class="product-catalog">
+            <div class="catalog-items-box">
+                <p class="product-catalog-name">
+                    Technology and IT
+                </p>
                 <div *ngFor="let product of getProducts.productsDto" class="catalog-item">
                     <div class="catalog-item-foto">
                         <img width="100%" height="100%" src="{{product.foto}}"  alt="foto">
@@ -79,12 +101,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <app-pagination ></app-pagination>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="catalog">
+
+    <div   class="paramsPanel" >
+        <div style="width: 90%; margin: 0 auto;">
+            
+        </div>
+    </div>
+
+    <div  class = "catalog-product" > 
+        <div>
+            <div style="margin:10px 1%;">
+               
                 
             </div>
     
         </div>
         <div  style="margin:0px auto;">
-            <app-pagination ></app-pagination>
         </div>
         <app-notification></app-notification>
     </div>  

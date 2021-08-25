@@ -32,14 +32,10 @@ const routes: Routes = [
       {path: 'setting', component: BasketComponent, }
     ], canActivate: [AuthGuard]
   },
-  { path: 'kinds', component: KindComponent,
-    children:[
-      { path: ':id/products', component: ProductComponent,},
-      
+  { path: 'kinds', component: KindComponent,},
+    //children:[
+  { path: 'kinds/:id/products', component: ProductComponent,},
       //{ path: 'kinds/:id/',component: ProductComponent}
-    ]
-
-  },
   { path: 'admin', component: AdminComponent,
     children: [
       { path: 'kinds', component: AdminKindComponent,},

@@ -32,12 +32,14 @@ export class AdminKindComponent implements OnInit {
     searchTerm: "",
     pageSize: 15,
     pageNumber: 1,
+    
   };
 
   public kind : IKind = {
     kindId : 0,
     name : "",
-    about : ""
+    about : "",
+    foto:""
   };
 
   public editKind: IKind = this.kind;
