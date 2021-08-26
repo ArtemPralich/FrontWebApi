@@ -51,7 +51,7 @@ import { NotificationService } from './service/NotificationRename';
 import { StarratingComponent } from './sections/starrating/starrating.component';
 import { StarsRatingService } from './service/StarsRatingService';
 import { NewproductComponent } from './newproduct/newproduct.component';
-
+import { google } from "google-maps";
 
 
 @NgModule({
@@ -78,7 +78,6 @@ import { NewproductComponent } from './newproduct/newproduct.component';
     NotificationComponent,
     StarratingComponent,
     NewproductComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -86,7 +85,7 @@ import { NewproductComponent } from './newproduct/newproduct.component';
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     RolesGuard,

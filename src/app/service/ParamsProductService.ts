@@ -21,7 +21,8 @@ export class ParamsProductService {
         this.Params.currency = (<HTMLInputElement>document.getElementById(str)).value;
     }
     sort(str:string){
-        this.Params.orderBy = (<HTMLInputElement>document.getElementById(str)).value;
+        this.Params.orderBy += `${(<HTMLInputElement>document.getElementById(str)).value},`;
+        alert(this.Params.orderBy)
     }
     returnParams():any{
         return this.Params;
