@@ -1,37 +1,33 @@
-<div class="shipper"> 
-    <div class="table-shipper"> 
-        <table class="table table-hover">
-            <caption>Shippers</caption>
-            <thead>
-                <tr>
-                    <th style="width: 40%;">Foto</th>
-                    <th style="width: 20%;">Name</th>
-                    <th style="width: 20%;">Id</th>
-                    <th style="width: 20%; min-width: 170px;">Rating</th>  
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let shipper of shippers">
-                    <td>
-                        <div class="foto">
-                            <img width="100%" height="100%" src="{{shipper.foto}}"  alt="foto">
-                        </div>
-                    </td>
-                    <td>
-                        <a href="/shippers/{{shipper.shipperId}}">
-                            {{shipper.name}}
+<div class="shipper-catalog" >
+    <div class="catalog-items-box" >
+        <p class="shipper-catalog-name">
+            Shipper
+        </p>
+        <div *ngFor="let shipper of this.shippers"  class="catalog-item" (click)="loadShipperPage(shipper.shipperId)">
+            <div style="float: none; height: 180px">
+                <div class="catalog-item-foto-stars1">
+                    <div class= catalog-item-foto>
+                        <img width="100%" height="100%" src="{{shipper.foto}}"  alt="foto">
+                    </div>
+                </div>
+                <div class="catalog-item-text" >
+                    <div style=" margin-top:10px; max-height:40px;  overflow: hidden;">
+                        <a >
+                            <h6>{{shipper.name}}  </h6>
                         </a>
-                    </td>
-                    <td>
-                        {{shipper.shipperId}}
-                    </td>
-                    <td>
-                        
-                        <app-starrating [ObjectId]="shipper.shipperId" [CountStars]="shipper.finalRating" ></app-starrating>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                    <div style=" max-height:90px; height:90px; height: 10%; overflow: hidden;">
+                        sadfsa sdfsadf sadfsa sdfsa fsadfsa sdfsadfs adfsa sdfsadfsa dfsa sdfsadfsad fsa sdfs adfsadfsa sdfs dffsa sdfsadfs adfsa sdfsadfsa dfsa sdfsadfsad fsa sdfs adfsadfsa sdfs df
+                    </div>
+                    <div class="starsHub1">
+                        <app-starrating [ObjectId]="shipper.shipperId" [CountStars]="shipper.finalRating" ></app-starrating>   
+                     </div>
+                </div>
+            </div>
+         </div> 
+    </div>
+    <div style="height: 10px;">
     </div>
 </div>
-
+<div style="height: 10px;">
+</div>

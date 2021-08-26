@@ -1,8 +1,33 @@
-<div class="div-shipper">
-    <div class="shipper-foto">
-        <img style="width: 100%; height: 100%;" src="{{this.shipper.foto}}">
+<div class="shipper-page">
+    <div class="shipper-panel">
+        <div class="shipper-panel-name">
+            <h6>
+                Shippers
+            </h6>
+        </div>
+        <div class="shipper-scroll overflow-auto">
+            <div style="width: 95%; overflow: hidden;">
+                
+            </div>
+        </div>
     </div>
-    <div class="shipper-text">
-
+    
+    <div class="shipper-out">
+        <div class="shipper-catalog">
+            <div class="catalog-items-box">
+                <div class="shipper-foto">
+                    <img width="100%" height="100%" src="{{this.shipper.foto}}"  alt="foto">
+                </div>
+                <div class="shipper-info">
+                    <p class="shipper-catalog-name">
+                        {{this.shipper.name}}
+                    </p>
+                </div>
+                
+                <div style="height: 1000px; width: 100%;">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+

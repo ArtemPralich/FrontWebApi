@@ -35,4 +35,7 @@ export class KindComponent implements OnInit {
       this.pagination.countAllPage = this.getKinds.countPage;
     });
   }
+  loadProduct(id:number){
+    this.router.navigate([`kinds/${id}/products`]);
+  }
 }

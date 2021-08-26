@@ -1,9 +1,9 @@
-<div class="kind-catalog">
+<div class="kind-catalog" >
     <div class="catalog-items-box" >
         <p class="product-catalog-name">
             Kinds
         </p>
-       <div *ngFor="let kind of this.getKinds.kindsDto"  class="catalog-item">
+       <div *ngFor="let kind of this.getKinds.kindsDto"  class="catalog-item" (click)="loadProduct(kind.kindId)">
             <div class="catalog-item-foto">
                 <img width="100%" height="100%" src="{{kind.foto}}"  alt="foto">
             </div>

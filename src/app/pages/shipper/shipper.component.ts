@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { ShipperService } from '../../service/ShipperService';
 import { OnInit } from '@angular/core';
 import { StarsRatingService } from 'src/app/service/StarsRatingService';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'shipper-app',
@@ -14,12 +15,11 @@ import { StarsRatingService } from 'src/app/service/StarsRatingService';
 export class ShipperComponent implements OnInit{
     public shippers: IShipper[] =[];
     
-    constructor(private shipperService: ShipperService, public starsService: StarsRatingService ) { 
+    constructor(private shipperService: ShipperService, public starsService: StarsRatingService, private router: Router) { 
       this.starsService.invokeEvent.subscribe(value => {    
         this.editStars(this.starsService.ObjectId,this.starsService.returnStars);
       });
     }
-        
     editStars(id:number, stars:number){
       this.shipperService.EditRetingShipper(id, stars).subscribe(res =>{
         this.get();
@@ -27,32 +27,14 @@ export class ShipperComponent implements OnInit{
         alert("nononononono");
       })
     }
-
-    getStars(n:number,m:boolean):number[]{
-      n = Math.round(n);
-      if(m == false){
-        let a:number[] = new Array(5 - n);
-        for(let b = 1; b <= a.length; b++){
-          a[b-1] = n+b;
-        }
-        return a;
-      }
-      else{
-        let a:number[] = new Array(n);
-        for(let b = 1; b <= a.length; b++){
-          a[b-1] = b;
-        }
-        return a;
-      }
-    }
-
     get(){
       this.shipperService.ReturnAllShippers().subscribe(res => {
         this.shippers = res;
       });
     }
-
-
+    loadShipperPage(id:number){
+      this.router.navigate([`shippers/${id}`]);
+    }
     ngOnInit(){
       this.get()
     }

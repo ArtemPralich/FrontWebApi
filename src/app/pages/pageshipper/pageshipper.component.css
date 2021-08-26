@@ -1,22 +1,193 @@
-.div-shipper{
-   width: 70%;
-   background-color: rgb(231, 231, 231);
-   height: 800px; 
-   margin-left: 10%;
-   margin-top: 20px;
-   border: 1px rgb(204, 204, 204) solid;
+@media screen and (max-width:1335px){
+   div.shipper-panel{
+       width: 0px;
+       height: 0px;
+       overflow: hidden;
+   }
+   div.shipper-out{
+       width:100%;
+   }
+   .shipper-catalog{
+       margin: 0 0;
+       font-size: 15px;
+   }
 }
+@media screen and (max-width:1070px){
+   div.shipper-panel{
+       width: 0px;
+       height: 0px;
+       overflow: hidden;
+   }
+   div.product-filters{
+       float: none;
+       margin: 0 2%;
+       width: 300px;
+   }
+   div.shipper-out{
+       width:100%;
+   }
+   div.shipper-catalog{
+       text-align: center;
+       float:none;
+       width: 98%;
+       margin: 10px auto;
+       font-size: 15px;
+   }
+   div.catalog-item{
+       width: 300px;
+       
+   }
+}
+@media screen and (max-width:400px){
+   .catalog-items-box{
+       display: block;
+   }
+   div.catalog-item{
+       min-width: 300px;
+       float:none;
+       max-width: 90%;
+       margin: 10px 4%;
+   }
+   div.product-filters{
+       float: none;
+       margin: 10px auto;
+       width: 90%;
+   }
+}
+@media screen and (max-width:2000px){
+   div.catalog-item{
+       width: 325px;
+   }
+}
+@media screen and (max-width:1900px){
+   div.catalog-item{
+       width: 350px;
+   }
+}
+@media screen and (min-width:1900px){
+   div.catalog-items-box{
+       margin: 10 auto;
+   }
+   div.shipper-panel{
+       width: 12%;
+   }
+   div.shipper-out{
+       width: 83%;
+   }
+   
+}
+.shipper-page{
+   margin-top: 30px;
+}
+.shipper-panel{
+   margin-top: 15px;
+   width: 15%;
+   max-height:800px;
+   float:left;
+   overflow: hidden;
+}
+.shipper-out{
+   width: 80%;
+   float: left;
+}
+.shipper-catalog{
+   border:rgb(190, 190, 190) 1px solid;
+   border-radius: 2px;
+   box-shadow: 0px 0px 10px rgba(62, 65, 68, 0.5);
+   width: 100%;
+   margin: 0 2% 0 2%;
+   float:left;
+   background-color: white;
+   text-align: center;
+}
+.shipper-filters{
+   border:rgb(190, 190, 190) 1px solid;
+   border-radius: 2px;
+   box-shadow: 0px 0px 10px rgba(62, 65, 68, 0.5);
+   background-color: white;
+   width:25%;
+   float: right;
+}
+.catalog-items-box{
+   width: 90%;
+   margin: 25px auto;
+}
+.shipper-panel-name{
+   width: 80%;
+   margin-left: 15%;
+   margin-bottom: 20px;
+}
+.shipper-panel-items{
+   color:gray;
+   width: 80%;
+   margin-left: 15%;
+}
+.shipper-catalog-name{
+   text-align: left;
+   margin: 2% 20px;
+   font-size: 15px;
+}
+.catalog-item{ /* Ширина */
+   min-width: 300px ;
+   max-height: 175px;
+   width: 350px;
+   margin: 0 2% 15px 0; /* Отступы */
+   text-align: center; /* Выравнивание по центру */
+   display: inline-block; /* Строчно-блочный элемент */
+   vertical-align: top;
+   background-color: rgb(240, 240, 240);   
+}
+
+.catalog-item:hover{
+   outline: 1px solid #65994C; 
+}
+.catalog-item-foto{
+   width: 50%; 
+   height:150px; 
+   margin: 15px 0% 10px 3%;  
+   float:left;
+   background-color: rgb(192, 176, 176);
+}
+.catalog-item-text{
+   margin: 0 6%;   
+   width: 35%;
+   float:right;
+   position: relative;
+   text-align: left;
+}
+
+.plusclass{
+   width:20%; 
+   cursor: pointer; 
+   float:left; 
+   border: 1px rgb(122, 122, 122) solid; 
+   text-align: center; 
+   background-color: rgb(128, 128, 128); 
+   color: azure;
+}
+
+.plusclass:hover{
+   background-color: rgb(99, 99, 99); 
+}
+
+.kind-scroll{
+   max-height: 800px;
+}
+::-webkit-scrollbar{ 
+   width: 1px;  
+   background-color: rgb(235, 235, 235); 
+}
+::-webkit-scrollbar-thumb {
+   background-color: rgb(250, 250, 250);
+   border-radius: 9em;
+   
+}
+
 .shipper-foto{
-   width: 400px;
-   height: 250px;
-   background-color: gray;
-   margin: 20px 30px 0px;
-   float:left;
-}
-.shipper-text{
-   margin: 20px 30px;
-   float:left;
+   width: 40%;
    min-width: 300px;
-   height: 250px;
-   background-color: green;
+   min-height: 200px;
+}
+.shipper-info{
+
 }
