@@ -25,17 +25,16 @@ export class PageShipperComponent implements OnInit {
   }
   ngOnInit(): void{
 
-    var coordinates = {lat: 47.212325, lng: 38.933663},
+    var coordinates = {lat: this.shipper.locationLat, lng: this.shipper.locationLat},
 
-        map = new google.maps.Map(<HTMLInputElement>document.getElementById('map'), {
-            center: coordinates,
-            zoom: 8
-        }),
-    
-        marker = new google.maps.Marker({
-            position: coordinates,
-            map: map,
-        });
+    map = new google.maps.Map(<HTMLInputElement>document.getElementById('map'), {
+      center: coordinates,
+      zoom: 8
+    }),    
+    marker = new google.maps.Marker({
+      position: coordinates,
+      map: map,
+    });
 
 
 
