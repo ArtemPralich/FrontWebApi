@@ -21,7 +21,9 @@ import { AuthService } from "src/app/service/AuthService";
       this.boolVisibleMenu = !this.boolVisibleMenu;
     }
 
+
     
+
     isLoggedIn(){
       return (localStorage.getItem('jwt') == null);
     }
