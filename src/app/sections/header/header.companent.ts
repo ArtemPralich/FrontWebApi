@@ -10,6 +10,8 @@ import { AuthService } from "src/app/service/AuthService";
     styleUrls: ['/header.css']
   })
   export class HeaderCompanent{
+    
+    
     public boolVisibleMenu :boolean = false;
     constructor(public authService : AuthService, public router : Router ){}
     
